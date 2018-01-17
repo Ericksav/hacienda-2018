@@ -39,6 +39,22 @@ input[type=tel], select,{
   line-height: 1.5;
 }
 
+.is-error {
+  font-size: rem(14);
+  color: $warning;
+}
+
+.c-alert {
+	padding: rem(5);
+  margin-bottom: rem(5);
+  border: 1px solid transparent;
+  &--error {
+  	color: #721c24;
+  	background-color: lighten($error-color, 65%);
+  	border-color: lighten($error-color, 60%);
+  }
+}
+
 
 //Animations
 @keyframes createModal {

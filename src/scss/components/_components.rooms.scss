@@ -1,0 +1,36 @@
+.c-room{
+	&__content{
+		@include breakpoint (md){
+			flex: 0 0 65%;
+			width: 65%;
+		}
+	}
+	&__sidebar{
+		@include breakpoint (md){
+			flex: 0 0 35%;
+			width: 35%;
+		}
+	}
+	&__description{
+		padding: rem(10);
+		border: rem(2) solid $brand-light-peach;
+		color: $brand-dark-brown;
+	}
+	&__type{
+		padding-left: rem(8);
+		border-left-width: rem(3);
+    border-left-style: solid;
+    &-red{
+    	border-color: #c15451;
+    }
+    &-yellow{
+    	border-color: #E7BA00; 
+    }
+    &-green{
+    	border-color: #a5bab1; 
+    }
+    &-brown{
+    	border-color: #cabfab; 
+    }
+	}
+}
