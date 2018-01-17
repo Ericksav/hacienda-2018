@@ -1,0 +1,37 @@
+{
+  "name": "hacienda-new",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack",
+    "watch": "webpack --watch",
+    "production": "webpack -p"
+  },
+  "author": "Ericksav",
+  "license": "ISC",
+  "dependencies": {
+    "huleos.css": "0.0.9",
+    "npm": "^5.6.0"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.23.2",
+    "browser-sync-webpack-plugin": "^1.2.0",
+    "copy-webpack-plugin": "^4.3.1",
+    "css-loader": "^0.28.7",
+    "file-loader": "^1.1.6",
+    "image-webpack-loader": "^3.4.2",
+    "imagemin-webpack-plugin": "^1.5.2",
+    "node-sass": "^4.7.2",
+    "postcss": "^6.0.15",
+    "postcss-cssnext": "^3.0.2",
+    "postcss-loader": "^2.0.9",
+    "sass-loader": "^6.0.6",
+    "style-loader": "^0.19.1",
+    "webpack": "^3.10.0"
+  },
+  "browserslist": [
+    "> 5%",
+    "last 2 versions"
+  ]
+}

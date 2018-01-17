@@ -1,0 +1,39 @@
+//Body Font
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800');
+
+//Typography
+// --------------------------
+$base-font-size:              rem-calc(18) !default;
+$body-font-family:            'Open Sans', sans-serif;
+
+a{
+	text-decoration: none;
+	transition: all .3s ease-out;
+	&:hover{
+		text-decoration: none;
+	}
+}
+body{
+	color: $dark-gray;
+	font-weight: 500;
+	font-family: 'Open Sans', sans-serif;
+	font-size: rem(18);
+}
+p{
+	line-height: 1.4;
+	margin-bottom: rem(15);
+}
+
+b{
+	font-weight: 700;
+	font-family: 'Open Sans', sans-serif;
+}
+
+h1,h2,h3{
+	font-family: $body-font-family;
+	margin-bottom: rem(15);
+}
+
+button{
+	font-family: $body-font-family;
+}

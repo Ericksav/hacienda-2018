@@ -1,0 +1,35 @@
+.c-image{
+	max-height: rem(280);
+	&__rooms{
+		margin-bottom: rem(25);
+		@include breakpoint (md){
+			padding: rem(10);
+		}
+	}
+	&__rooms-button{
+		margin: rem(20) 0 0;
+		@include breakpoint (md){
+			padding: rem(10);
+			margin: 0;
+		}
+	}
+	img{
+		position: relative;
+	}
+	&__frame{
+		transition: all .6s ease-out;
+		position: relative;
+		background-color: $white;
+		padding: rem(10);
+		top: rem(-70);
+	}
+	&__text{
+		color: $dark-gray;
+		margin-bottom: 0;
+	}
+	&:hover{
+		.c-image__frame{
+			background-color: rgba(252,252,252,.5);
+		}
+	}
+}

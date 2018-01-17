@@ -1,0 +1,184 @@
+.c-border{
+	width: 100%;
+	display: block;
+  height: rem(4);
+  background: url(/src/img/border.jpg) repeat-x;
+  @include breakpoint(md){
+  	height: rem(6);
+  }
+}
+.c-header{
+	background-color: $brand-light-yellow;
+	flex: 0 0 100%;
+	width: 100%;
+	@include breakpoint(md){
+		background-color: rgba(254, 254, 254, .9);
+		padding: rem(20);
+		justify-content: space-around;
+	}
+	&__logo{
+		flex: 0 0 50%;
+		width: 50%;
+		// margin-bottom: rem(15);
+		padding: rem(10);
+		@include breakpoint(md){
+			flex: 0 0 auto;
+			width: auto;
+			margin-bottom: 0;
+			padding: 0;
+		}
+	}
+	&__nav{
+		flex: 0 0 100%;
+		width: 100%;
+		align-items: center;
+		@include breakpoint(md){
+			flex: 0 0 auto;
+			width: auto;
+		}
+	}
+	&__menu-small{
+		display: flex;
+		flex: 0 0 50%;
+		width: 50%;
+		justify-content: flex-end;
+		padding: rem(10);
+		padding-right: rem(30);
+		position: relative;
+		a{
+			color: $brand-dark-brown;
+			font-weight: 900;
+			text-transform: uppercase;
+		}
+		&::after{
+			position: absolute;
+	    top: 32%;
+	    right: 5%;
+	    display: block;
+	    width: 8%;
+	    height: rem(3);
+	    background: $brand-dark-brown;
+	    box-shadow: 0 rem(6) 0 $brand-dark-brown, 0 rem(12) 0 $brand-dark-brown;
+	    content: "";
+		}
+		@include breakpoint (md){
+			display: none;
+		}
+	}
+	&__links{
+		ul{
+			animation: createBurger 1s;
+			// animation: closeBurger 0.5s;
+			list-style: none;
+			margin: 0;
+			align-items: center;
+			justify-content: middle;
+			text-transform: capitalize;
+			@keyframes createBurger {
+			  from {
+			    height: rem(0);
+			  }
+			  to {
+			    height: rem(155);
+			  }
+			}
+			@keyframes closeBurger {
+			  from {
+			    height: rem(155);
+			  }
+			  to {
+			    height: 0;
+			  }
+			}
+			@include breakpoint(md){
+				animation: none;
+			}
+			li{
+				display: flex;
+				width: 100%;
+				flex: 0 0 100%;
+				background-color: $white; 
+				justify-content: center;
+				a{
+					color: $dark-gray;
+					padding: rem(5) rem(10);
+					font-size: rem(14);
+				}
+				@include breakpoint(md){
+					justify-content: middle;
+					margin: 0;
+					align-items: center;
+					width: auto;
+					flex: 0 0 auto;
+					a{
+						padding: rem(10) rem(26);
+						font-size: rem(18);
+						&:hover{
+							color: $brand-light-brown;
+						}
+					}
+				}
+			}
+		}
+	}
+	&__cta{
+		display: flex;
+		flex: 0 0 100%;
+		width: 100%;
+		background-color: $white;
+		padding: rem(10);
+		align-items: center;
+		span{
+			flex: 0 0 60%;
+			width: 60%;
+			color: $brand-dark-brown;
+			font-weight: 900;
+			font-size: rem(12);
+		}
+		.c-button-general{
+			&__cta{
+				flex: 0 0 40%;
+				width: 40%;
+				padding: rem(5);
+				font-size: rem(14);
+				@include breakpoint(md){
+					padding: rem(10) rem(20);
+				  width: 100%;
+					font-size: rem(18);
+				}
+			}
+		}
+		@include breakpoint(md){
+			display: inline-block;
+			width: auto;
+			flex: 0 0 auto;
+			span{
+				display: none;
+			}
+			.c-button-general{
+				width: auto;
+			}
+			margin: rem(0) rem(20);
+		}
+	}
+}
+
+.c-video-intro{
+	position: relative;
+	&__text{
+		position: absolute;
+		color: $white;
+		font-size: rem(30);
+		font-weight: 900;
+		text-transform: uppercase;
+		top: rem(20);
+		text-align: center;
+		margin-bottom: 0;
+		left: rem(50);
+		@include breakpoint(md){
+			top: 10rem;
+			left: 20rem;
+			font-size: 6rem;
+		}
+	}
+}

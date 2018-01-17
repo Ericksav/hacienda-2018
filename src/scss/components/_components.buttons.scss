@@ -1,0 +1,97 @@
+.c-button-general{
+	background-color: $brand-light-blue;
+	border: 2px solid $brand-light-blue;
+	padding: rem(10) rem(20);
+  width: 100%;
+	color: $white;
+	font-size: rem(18);
+	text-transform: capitalize;
+	transition: all .6s ease-out;
+	text-align: center;
+	&:hover,
+	&:active, 
+	&:focus{
+		background-color: transparent;
+		color: $brand-light-blue !important;
+		border-color: $brand-light-blue !important;
+	}
+	&__brown{
+		background-color: $brand-light-brown;
+		border: 2px solid $brand-light-brown;
+		padding: rem(10) rem(20);
+  	width: 100%;
+  	color: $white;
+  	transition: all .6s ease-out;
+  	&:hover,
+		&:active, 
+		&:focus{
+			background-color: transparent;
+			color: $brand-light-brown !important;
+			border-color: $brand-light-brown !important;
+		}
+		&-transparent{
+			background-color: transparent;
+			text-transform: uppercase;
+			font-weight: 700 !important;
+			border: 2px solid $brand-light-brown;
+			padding: rem(10) rem(20);
+	  	width: 100%;
+	  	color: $brand-dark-brown !important;
+	  	transition: all .6s ease-out;
+	  	&:hover,
+			&:active, 
+			&:focus{
+				background-color: transparent;
+				color: $brand-dark-brown !important;
+				border-color: $brand-dark-brown !important;
+			}
+		}
+	}
+	&__white{
+		background-color: $white;
+		border: 2px solid $white;
+		padding: rem(10) rem(50);
+  	width: 100%;
+  	color: $dark-gray;
+  	transition: all .6s ease-out;
+  	&:hover,
+		&:active, 
+		&:focus{
+			background-color: transparent;
+			color: $white !important;
+			border-color: $white !important;
+		}
+	}
+	&__green{
+		background-color: $brand-green-trip;
+		border: 2px solid $brand-green-trip;
+		padding: rem(10) rem(70);
+  	width: 100%;
+  	color: $white;
+  	transition: all .6s ease-out;
+  	&:hover,
+		&:active, 
+		&:focus{
+			background-color: transparent;
+			color: $brand-green-trip !important;
+			border-color: $brand-green-trip !important;
+		}
+	}
+	&__transparent{
+		background-color: transparent;
+		border: 2px solid $white;
+		padding: rem(10) rem(20);
+  	width: 100%;
+  	color: $white;
+  	transition: all .6s ease-out;
+  	text-align: center;
+  	font-weight: 700;
+  	&:hover,
+		&:active, 
+		&:focus{
+			background-color: $brand-dark-brown;
+			color: $white !important;
+			border-color: $brand-dark-brown !important;
+		}
+	}
+}

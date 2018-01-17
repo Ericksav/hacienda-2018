@@ -1,0 +1,67 @@
+.c-footer{
+	&__container{
+		background-color: $brand-light-yellow;
+		&-down{
+			background-color: #ffe6c0;
+			a{
+				&:hover{
+					color: $brand-dark-brown;
+				}
+			}
+			span{
+				font-weight: 500;
+			}
+		}
+	}
+	&__content{
+		@include breakpoint(md){
+			padding: rem(50) rem(20);
+		}
+		padding: rem(20);
+		&-down{
+			padding: rem(20) rem(20);
+			font-weight: 700;
+			a{
+				margin-right: rem(30);
+				color: $dark-gray;
+			}
+		}
+	}
+	&__info{
+		b,small{
+			font-weight: 900;
+		}
+		a,span{
+			font-weight: 500;
+			color: $dark-gray;
+			&:hover{
+				color: $brand-dark-brown;
+			}
+		}
+		color: $dark-gray;
+	}
+	&__menu{
+		list-style: none;
+		a{
+			color: $dark-gray;
+			font-weight: 900;
+			&:hover{
+				color: $brand-dark-brown;
+			}
+		}
+	}
+	&__social{
+		p{
+			margin-bottom: rem(5);
+		}
+		img{
+			max-width: 10%;
+		}
+	}
+	&__trip{
+		color: $brand-green-trip !important;
+	}
+	&__book{
+		color: $brand-light-blue !important;
+	}
+}

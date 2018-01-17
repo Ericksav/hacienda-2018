@@ -1,0 +1,19 @@
+.c-restaurant{
+	&__intro{
+		margin-bottom: rem(20);
+		p{
+			margin-right: rem(10);
+			display: inline-block;
+		}
+		.c-content-hacienda__title{
+			@include breakpoint (md){
+				margin-bottom: rem(30);
+			}
+		}
+		.c-button-general__brown{
+			@include breakpoint (md){
+				padding: rem(10) rem(50); 
+			}
+		}
+	}
+}

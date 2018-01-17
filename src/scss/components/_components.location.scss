@@ -1,0 +1,42 @@
+.c-location{
+	&__container{
+		border: rem(2) solid $brand-light-peach;
+		&-up{
+			padding: rem(15);
+			border-bottom: rem(2) solid $brand-light-peach;
+		}
+	}
+	&__info{
+		b,small{
+			font-weight: 900;
+		}
+		a,span{
+			font-weight: 500;
+			color: $dark-gray;
+		}
+		color: $dark-gray;
+	}
+	&__numbers{
+		margin-bottom: rem(30);
+		p{
+			margin-bottom: 0;
+		}
+	}
+	&__email{
+		margin-bottom: rem(30);
+	}
+	&__maps{
+		min-height: rem(60);
+		position: relative;
+		img{
+			min-height: rem(60);
+		}
+		&-button{
+			width: 80%;
+			@include breakpoint(md){
+				width: 20%;
+			}
+			position: absolute;
+		}
+	}
+}
