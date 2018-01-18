@@ -3,12 +3,16 @@
 		@include breakpoint (md){
 			flex: 0 0 65%;
 			width: 65%;
+			padding-left: 0;
+			padding-right: rem(20);
 		}
 	}
 	&__sidebar{
 		@include breakpoint (md){
 			flex: 0 0 35%;
 			width: 35%;
+			padding-left: rem(20);
+			padding-top: 0;
 		}
 	}
 	&__description{

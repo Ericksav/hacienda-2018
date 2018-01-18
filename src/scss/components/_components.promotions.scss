@@ -1,0 +1,37 @@
+.c-promotions{
+	&__content{
+		@include breakpoint (md){
+			flex: 0 0 60%;
+			width: 60%;
+			padding-left: 0;
+			padding-right: rem(20);
+		}
+	}
+	&__sidebar{
+		background-color: #E4EAFF;
+		max-height: 60rem;
+		@include breakpoint (md){
+			flex: 0 0 40%;
+			width: 40%;
+		}
+		&__container{
+			padding: rem(30);
+		}
+		&-title{
+			font-weight: 900;
+			text-transform: uppercase;
+			color: $brand-dark-blue;
+		}
+		&-up{
+			background-color: #ccd7ff;
+			small{
+				color: $brand-dark-blue;
+			}
+		}
+	}
+	&__box{
+		@include breakpoint (md){
+			padding: 0 rem(20) rem(10) 0;
+		}
+	}
+}

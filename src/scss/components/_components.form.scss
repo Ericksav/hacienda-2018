@@ -18,7 +18,7 @@
 	&__form{
 		input,select, input[type="tel"]{
 			border: 1px solid $brand-light-peach;
-			border-radius: 0;
+			border-radius: 0 !important;
 			color: $dark-gray !important;
 			font-weight: 500;
 		}
@@ -31,6 +31,7 @@
 
 
 input[type=tel], select,{
+	border-radius: 0 !important;
 	display: block;
   width: 100%;
   font-family: inherit;

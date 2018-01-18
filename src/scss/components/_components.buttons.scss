@@ -77,6 +77,22 @@
 			border-color: $brand-green-trip !important;
 		}
 	}
+	&__purple{
+		background-color: $brand-purple-dark-sani;
+		border: 2px solid $brand-purple-dark-sani;
+		padding: rem(10) rem(70);
+  	width: 100%;
+  	color: $white;
+  	transition: all .6s ease-out;
+  	text-align: center;
+  	&:hover,
+		&:active, 
+		&:focus{
+			background-color: transparent;
+			color: $brand-purple-dark-sani !important;
+			border-color: $brand-purple-dark-sani !important;
+		}
+	}
 	&__transparent{
 		background-color: transparent;
 		border: 2px solid $white;
