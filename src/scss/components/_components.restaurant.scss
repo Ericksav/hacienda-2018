@@ -16,4 +16,15 @@
 			}
 		}
 	}
+	&__content{
+		@include breakpoint (md){
+			padding: rem(20);
+		}
+	}
+	&__room-service{
+		padding: rem(10);
+		font-size: rem(20);
+		border: rem(2) solid $brand-light-peach;
+		color: $brand-dark-brown;
+	}
 }
