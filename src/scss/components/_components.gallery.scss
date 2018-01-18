@@ -1,0 +1,18 @@
+.c-gallery{
+	&__title{
+		@include breakpoint(md){
+			margin-bottom: 0 !important;
+		}
+	}
+	&__container{
+		@include breakpoint (md){
+			padding: rem(20);
+		}
+	}
+	&__img{
+		transition: all .6s ease-out;
+		&:hover{
+			transform: scale(1.1);
+		}
+	}
+}
