@@ -16,6 +16,22 @@
 			}
 		}
 	}
+	&__logo{
+		flex: 0 0 100%;
+		width: 100%;
+		@include breakpoint (md){
+			flex: 0 0 30%;
+			width: 30%;
+		}
+	}
+	&__info{
+		flex: 0 0 100%;
+		width: 100%;
+		@include breakpoint (md){
+			flex: 0 0 70%;
+			width: 70%;
+		}
+	}
 	&__content{
 		@include breakpoint (md){
 			padding: rem(20);

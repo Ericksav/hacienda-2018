@@ -32,4 +32,28 @@
 			background-color: rgba(252,252,252,.5);
 		}
 	}
+	&__home-rooms{
+		flex: 0 0 100%;
+		width: 100%;
+		@include breakpoint (md){
+			flex: 0 0 50%;
+			width: 50%;
+			margin-bottom: rem(80);
+		}
+		@include breakpoint (lg){
+			margin-bottom: 0; 
+		}
+	}
+	&__home-restaurant{
+		flex: 0 0 100%;
+		width: 100%;
+		@include breakpoint (md){
+			flex: 0 0 31%;
+			width: 31%;
+			// margin-bottom: rem(80);
+		}
+		// @include breakpoint (lg){
+		// 	margin-bottom: 0; 
+		// }
+	}
 }

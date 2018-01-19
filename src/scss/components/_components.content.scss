@@ -38,6 +38,24 @@
 				margin-bottom: rem(20);
 			}
 		}
+		&-flex{
+			&__logo{
+				flex: 0 0 100%;
+				width: 100%;
+				@include breakpoint (md){
+					flex: 0 0 30%;
+					width: 30%;
+				}
+			}
+			&__text{
+				flex: 0 0 100%;
+				width: 100%;
+				@include breakpoint (md){
+					flex: 0 0 70%;
+					width: 70%;
+				}
+			}
+		}
 	}
 	&__trip{
 		margin-bottom: rem(20);
@@ -45,6 +63,24 @@
 			padding: 0 0 0 rem(20);
 			p{
 				margin-bottom: rem(20);
+			}
+		}
+		&-flex{
+			&__logo{
+				flex: 0 0 100%;
+				width: 100%;
+				@include breakpoint (md){
+					flex: 0 0 30%;
+					width: 30%;
+				}
+			}
+			&__text{
+				flex: 0 0 100%;
+				width: 100%;
+				@include breakpoint (md){
+					flex: 0 0 70%;
+					width: 70%;
+				}
 			}
 		}
 	}

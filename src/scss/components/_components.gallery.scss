@@ -8,6 +8,14 @@
 		@include breakpoint (md){
 			padding: rem(20);
 		}
+		&__img{
+			flex: 0 0 100%;
+			width: 100%;
+			@include breakpoint (md){
+				flex: 0 0 33%;
+				width: 33%;
+			}
+		}
 	}
 	&__img{
 		transition: all .6s ease-out;

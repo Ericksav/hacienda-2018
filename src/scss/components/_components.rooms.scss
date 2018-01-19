@@ -1,6 +1,6 @@
 .c-room{
 	&__content{
-		@include breakpoint (md){
+		@include breakpoint (lg){
 			flex: 0 0 65%;
 			width: 65%;
 			padding-left: 0;
@@ -8,7 +8,7 @@
 		}
 	}
 	&__sidebar{
-		@include breakpoint (md){
+		@include breakpoint (lg){
 			flex: 0 0 35%;
 			width: 35%;
 			padding-left: rem(20);

@@ -176,6 +176,11 @@
 		margin-bottom: 0;
 		left: rem(50);
 		@include breakpoint(md){
+			top: 4rem;
+			left: 10rem;
+			font-size: 4rem;
+		}
+		@include breakpoint(lg){
 			top: 10rem;
 			left: 20rem;
 			font-size: 6rem;
