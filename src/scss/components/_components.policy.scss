@@ -1,0 +1,24 @@
+.c-policy{
+	// display: block;
+	&__container{
+		animation: createModal 1s;
+		// animation: closeModal 0.5s;
+		padding: rem(30);
+		border-radius: 0;
+		max-width: rem(900);
+		border-color: $brand-light-yellow;
+		margin:0;
+		// height: 100%;
+		@include breakpoint (lg){
+			 margin: 1.875rem auto;
+		}
+		&-close{
+			color: $brand-dark-brown;
+		}
+	}
+	&__box{
+		padding: rem(20);
+		border: rem(2) solid $brand-light-peach;
+		color: $brand-dark-brown;
+	}
+}

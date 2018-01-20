@@ -111,8 +111,12 @@
 					width: auto;
 					flex: 0 0 auto;
 					a{
-						padding: rem(10) rem(26);
-						font-size: rem(18);
+						padding: rem(10);
+						font-size: rem(16);
+						@include breakpoint(lg){
+							font-size: rem(18);
+							padding: rem(10) rem(26);
+						}
 						&:hover{
 							color: $brand-light-brown;
 						}
@@ -142,6 +146,11 @@
 				padding: rem(5);
 				font-size: rem(14);
 				@include breakpoint(md){
+					padding: rem(10) rem(15);
+				  width: 100%;
+					font-size: rem(16);
+				}
+				@include breakpoint(lg){
 					padding: rem(10) rem(20);
 				  width: 100%;
 					font-size: rem(18);
