@@ -3,7 +3,7 @@
 	border: 2px solid $brand-light-blue;
 	padding: rem(10) rem(20);
   width: 100%;
-	color: $white;
+	color: $white !important;
 	font-size: rem(18);
 	text-transform: capitalize;
 	transition: all .6s ease-out;
@@ -20,7 +20,7 @@
 		border: 2px solid $brand-light-brown;
 		padding: rem(10) rem(20);
   	width: 100%;
-  	color: $white;
+  	color: $white !important;
   	transition: all .6s ease-out;
   	&:hover,
 		&:active, 
@@ -52,7 +52,7 @@
 		border: 2px solid $white;
 		padding: rem(10) rem(50);
   	width: 100%;
-  	color: $dark-gray;
+  	color: $dark-gray !important;
   	transition: all .6s ease-out;
   	&:hover,
 		&:active, 
@@ -67,7 +67,7 @@
 		border: 2px solid $brand-green-trip;
 		padding: rem(10) rem(70);
   	width: 100%;
-  	color: $white;
+  	color: $white !important;
   	transition: all .6s ease-out;
   	&:hover,
 		&:active, 
@@ -82,7 +82,7 @@
 		border: 2px solid $brand-purple-dark-sani;
 		padding: rem(10) rem(70);
   	width: 100%;
-  	color: $white;
+  	color: $white !important;
   	transition: all .6s ease-out;
   	text-align: center;
   	&:hover,
@@ -98,7 +98,7 @@
 		border: 2px solid $white;
 		padding: rem(10) rem(20);
   	width: 100%;
-  	color: $white;
+  	color: $white !important;
   	transition: all .6s ease-out;
   	text-align: center;
   	font-weight: 700;
