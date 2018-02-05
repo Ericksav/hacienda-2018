@@ -12,6 +12,10 @@
 			margin-bottom: rem(10);
 			&-trip{
 				color: $brand-green-trip;
+				font-weight: 900;
+				text-transform: uppercase;
+				margin-bottom: 0;
+				margin-bottom: rem(10);
 			}
 		}
 		a{
