@@ -23,22 +23,38 @@
 		padding: rem(10);
 		top: rem(-70);
 	}
+	&__frame-home{
+		transition: all .6s ease-out;
+		position: relative;
+		background-color: $white;
+		padding: rem(10);
+		top: 0;
+	}
+	&__frame-restaurant-home{
+		transition: all .6s ease-out;
+		position: relative;
+		background-color: $white;
+		padding: rem(10);
+		top: rem(-100);
+	}
 	&__text{
 		color: $dark-gray;
 		margin-bottom: 0;
 	}
 	&:hover{
-		.c-image__frame{
+		.c-image__frame,
+		.c-image__frame-restaurant-home{
 			background-color: rgba(252,252,252,.5);
 		}
 	}
 	&__home-rooms{
 		flex: 0 0 100%;
 		width: 100%;
+		margin-bottom: rem(100);
 		@include breakpoint (md){
-			flex: 0 0 50%;
-			width: 50%;
-			margin-bottom: rem(80);
+			flex: 0 0 32%;
+			width: 32%;
+			margin-bottom: rem(20);
 		}
 		@include breakpoint (lg){
 			margin-bottom: 0; 
@@ -48,9 +64,9 @@
 		flex: 0 0 100%;
 		width: 100%;
 		@include breakpoint (md){
-			flex: 0 0 31%;
-			width: 31%;
-			// margin-bottom: rem(80);
+			flex: 0 0 48%;
+			width: 48%;
+			// margin-bottom: rem(20);
 		}
 		// @include breakpoint (lg){
 		// 	margin-bottom: 0; 

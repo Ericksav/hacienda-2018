@@ -17,6 +17,12 @@
 				margin-bottom: 0;
 				margin-bottom: rem(10);
 			}
+			// &-small{
+			// 	margin-bottom: rem(20);
+			// 	@include breakpoint(lg) {
+			// 		margin-bottom: 0 !important;
+			// 	}
+			// }
 		}
 		a{
 			color: $brand-light-brown;
@@ -70,16 +76,16 @@
 				flex: 0 0 100%;
 				width: 100%;
 				@include breakpoint (md){
-					flex: 0 0 30%;
-					width: 30%;
+					flex: 0 0 42%;
+					width: 42%;
 				}
 			}
 			&__text{
 				flex: 0 0 100%;
 				width: 100%;
 				@include breakpoint (md){
-					flex: 0 0 70%;
-					width: 70%;
+					flex: 0 0 58%;
+					width: 58%;
 				}
 			}
 		}
