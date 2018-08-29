@@ -44,8 +44,7 @@
 	<div class="o-container--full u-p0 o-flex">
 		<div class="o-embed o-embed--16x9 c-video-intro">
 		  <video class="o-embed__item" autoplay loop>
-			  <source src="src/video/video-hacienda.mp4" type="video/mp4">
-			  <source src="src/video/video-hacienda.webm" type="video/webm">
+			  <source src="https://sanimedical.nyc3.digitaloceanspaces.com/hacienda-los-algodones/site/web-intro-2018.webm" type="video/webm">
 			</video>
 			<p class="c-video-intro__text">REST<br>IN BEAUTIFUL<br>MEXICO</p>
 		</div>
@@ -174,7 +173,7 @@
 			  <div class="c-modal__container c-booking__container">
 			    <h2 class="c-content-hacienda__title">Rest in beautiful mexico</h2>
 			    <p>Please fill in the forms below and we’ll get back to you as soon as possible with more information about your stay with Hacienda Los Algodones and your treatment at the dental clinic of your choice. All fields are required.</p>
-			    <form class="c-booking__form o-flex o-flex--center">
+			    <form class="c-booking__form o-flex o-flex--center" action="http://api.forms.sanimedical.info/v1/send/sani_gk8N1fgUR1Xx3ckGeIy5M0pn" method="post">
 			    	<div class="o-flex u-flex__full o-flex--justify">
 			    		<div class="u-flex__31">
 			    			<!-- <div class="c-alert c-alert--error">
@@ -183,43 +182,42 @@
 									</div>
 								</div> -->
 			    			<small class="is-error">Error Full Name</small>
-			    			<input type="text" class="c-form-input" placeholder="Full Name">
+			    			<input type="text" class="c-form-input" placeholder="Full Name" name="full_name">
 			    		</div>
 			    		<div class="u-flex__31">
 			    			<small class="is-error">Error Email</small>
-			    			<input type="email" class="c-form-input" placeholder="Email">
+			    			<input type="email" class="c-form-input" placeholder="Email" name="email">
 			    		</div>
 			    		<div class="u-flex__31">
 			    			<small class="is-error">Error Phone</small>
-			    			<input type="tel" class="c-form-input" placeholder="Phone">
+			    			<input type="tel" class="c-form-input" placeholder="Phone" name="phone">
 			    		</div>
 			    	</div>
 
 			    	<div class="o-flex u-flex__full o-flex--justify o-flex--middle">
 			    		<div class="u-flex__22">
-			    			<input type="text" class="c-form-input" placeholder="Arrival">
+			    			<input type="date" class="c-form-input" placeholder="Arrival" name="date_arrival">
 			    		</div>
 			    		<div class="u-flex__22">
-			    			<input type="text" class="c-form-input" placeholder="Departure">
+			    			<input type="date" class="c-form-input" placeholder="Departure" name="date_departure">
 			    		</div>
 			    		<div class="u-flex__22">
-							  <select class="c-form-input">
+							  <select class="c-form-input" name="party">
 							    <option>Party</option>
-							    <option>1</option>
-							    <option>2</option>
-							    <option>3</option>
-							    <option>4</option>
+							    <option value="1">1</option>
+							    <option value="2">2</option>
+							    <option value="3">3</option>
+							    <option value="4">4</option>
 							  </select>
 			    			<!-- <input type="text" class="c-form-input" placeholder="Party"> -->
 			    		</div>
 			    		<div class="u-flex__22">
-			    			<select class="c-form-input">
+			    			<select class="c-form-input" name="room">
 							    <option>Room</option>
-							    <option>Single</option>
-							    <option>Double</option>
-							    <option>Suite</option>
+							    <option value="Single">Single</option>
+							    <option value="Double">Double</option>
+							    <option value="Suite">Suite</option>
 							  </select>
-			    			<!-- <input type="text" class="c-form-input" placeholder="Room"> -->
 			    		</div>
 			    	</div>
 
@@ -227,21 +225,23 @@
 			    		<span><b>Want to add another guest? </b><a href="">Click here</a></span>
 			    	</div>
 
-			    	<div class="o-flex u-flex__full o-flex--justify u-mb1">
+			    	<!-- <div class="o-flex u-flex__full o-flex--justify u-mb1">
 			    		<div class="u-flex__full">
-			    			<input type="text" class="c-form-input" placeholder="Guest Name">
+			    			<input type="text" class="c-form-input" placeholder="Guest Name" name="guest_1">
 			    		</div>
 			    		<div class="u-flex__full">
-			    			<input type="text" class="c-form-input" placeholder="Guest Name">
+			    			<input type="text" class="c-form-input" placeholder="Guest Name" name="guest_2">
 			    		</div>
 			    		<div class="u-flex__full">
-			    			<input type="text" class="c-form-input" placeholder="Guest Name">
+			    			<input type="text" class="c-form-input" placeholder="Guest Name" name="guest_3">
 			    		</div>
-			    	</div>
+			    	</div> -->
 
 			    	<div class="u-flex__third">
-							<button class="c-button-general c-button-general__cta">Submit</button>
+							<button class="c-button-general c-button-general__cta" type="submit">Submit</button>
 			    	</div>
+
+			    	<input type="hidden" name="redirect" value="https://haciendalosalgodones.com">
 
 					</form>
 			    <button type="button" class="c-modal__close c-booking__container-close" aria-label="close">
