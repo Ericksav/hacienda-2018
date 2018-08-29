@@ -88,26 +88,26 @@
         			</div>
         		</div>
         		<div class="u-flex__full">
-	        		<form class="o-flex o-flex--center" action="">
-	        			<input type="text" class="c-form-input" placeholder="Full Name">
-	        			<input type="text" class="c-form-input" placeholder="Email">
-	        			<select class="c-form-input">
+	        		<form class="o-flex o-flex--center" action="http://api.forms.sanimedical.info/v1/send/sani_6WkpdGdN4NInvJRxr2aqcr5H" method="post">
+	        			<input type="text" class="c-form-input" placeholder="Full Name" name="full_name">
+	        			<input type="text" class="c-form-input" placeholder="Email" name="email">
+	        			<select class="c-form-input" name="gender">
 							    <option>Gender</option>
 							    <option>Female</option>
 							    <option>Male</option>
 							  </select>
-	        			<input type="text" class="c-form-input" placeholder="Contact Number">
-	        			<input type="text" class="c-form-input" placeholder="Desired Treatment">
-	        			<input type="text" class="c-form-input" placeholder="Desired Date">
-	        			<select class="c-form-input">
+	        			<input type="text" class="c-form-input" placeholder="Contact Number" name="phone">
+	        			<input type="text" class="c-form-input" placeholder="Desired Treatment" name="treatment">
+	        			<input type="date" class="c-form-input" placeholder="Desired Date" name="date_desired">
+	        			<select class="c-form-input" name="date_time">
 							    <option>Desired Time</option>
 							    <option>Morning</option>
 							    <option>Midday</option>
 							    <option>Afternoon</option>
 							  </select>
-	        			<textarea class="c-form-input" rows="5" placeholder="Your message"></textarea>
+	        			<textarea class="c-form-input" rows="5" placeholder="Your message" name="message"></textarea>
 	        			<div class="u-flex__half u-my1">
-									<a class="c-button-general c-button-general__purple">Submit</a>
+									<button class="u-px0 c-button-general c-button-general__purple" type="submit">Submit</button>
 					    	</div>
 	        		</form>
 	        	</div>
