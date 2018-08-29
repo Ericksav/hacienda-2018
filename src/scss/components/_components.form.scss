@@ -1,5 +1,5 @@
 .c-booking{
-	display: block;
+	// display: block;
 	&__container{
 		animation: createModal 1s;
 		// animation: closeModal 0.5s;
@@ -31,7 +31,7 @@
 
 
 
-input[type=tel], select,{
+input[type=tel], select, input[type=date]{
 	border-radius: 0 !important;
 	display: block;
   width: 100%;
@@ -40,6 +40,7 @@ input[type=tel], select,{
   outline: none;
   line-height: 1.5;
 }
+
 
 .is-error {
   font-size: rem(14);
