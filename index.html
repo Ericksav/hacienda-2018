@@ -169,6 +169,7 @@
 			
 			<!-- Booking Form -->
 			<!-- En el scss components.form, para visualizar el modal, hay que cambiarle la clase .c-booking a display: block, esta comentariada -->
+			<div id="app">
 			<div class="c-modal c-booking">
 			  <div class="c-modal__container c-booking__container">
 			    <h2 class="c-content-hacienda__title">Rest in beautiful mexico</h2>
@@ -181,23 +182,23 @@
 										<span>ERROR</span>
 									</div>
 								</div> -->
-			    			<small class="is-error">Error Full Name</small>
-			    			<input type="text" class="c-form-input" placeholder="Full Name" name="full_name" required pattern="[a-zA-Z]+">
+			    			<small class="is-error">{{ errors.first('full_name') }}</small>
+			    			<input type="text" class="c-form-input" placeholder="Full Name" name="full_name" v-validate="'required|alpha'">
 			    		</div>
 			    		<div class="u-flex__31">
-			    			<small class="is-error">Error Email</small>
-			    			<input type="email" class="c-form-input" placeholder="Email" name="email" required>
+			    			<small class="is-error">{{ errors.first('email') }}</small>
+			    			<input type="email" class="c-form-input" placeholder="Email" name="email" v-validate="'required|email'">
 			    		</div>
 			    		<div class="u-flex__31">
-			    			<small class="is-error">Error Phone</small>
-			    			<input type="tel" class="c-form-input" placeholder="Phone" name="phone" maxlength="10" required>
+			    			<small class="is-error">{{ errors.first('phone') }}</small>
+			    			<input type="tel" class="c-form-input" placeholder="Phone" name="phone" maxlength="10" v-validate="'required|numeric'">
 			    		</div>
 			    	</div>
 
 			    	<div class="o-flex u-flex__full o-flex--justify o-flex--middle">
 			    		<div class="u-flex__22">
-			    			<small class="is-error">Date of Arrival Required</small>
-			    			<input type="date" class="c-form-input" placeholder="Arrival" name="date_arrival" required>
+			    			<small class="is-error">{{ errors.first('date_format_field') }}</small>
+			    			<input v-validate="'date_format:DD/MM/YYYY'" name="date_format_field" type="text" class="c-form-input" placeholder="Arrival">
 			    		</div>
 			    		<div class="u-flex__22">
 			    			<small class="is-error">Date of Departure Required</small>
@@ -252,6 +253,7 @@
 			      <span aria-hidden="true">&times;</span>
 			    </button>
 			  </div>
+			</div>
 			</div>
 			<!-- Booking Form -->
 
@@ -348,6 +350,5 @@
 	</footer>
 	<!-- Footer -->
 	<script src="./dist/bundle.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
 </body>
 </html>

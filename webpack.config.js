@@ -10,6 +10,12 @@ module.exports = {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist')
   },
+  resolve: {
+    extensions: ['*', '.js', '.jsx', '.vue'],
+    alias: {
+      'vue$': 'vue/dist/vue.common.js'
+    }
+  },
   module: {
       rules:
       [
