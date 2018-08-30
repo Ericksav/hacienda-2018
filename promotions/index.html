@@ -8,11 +8,11 @@
 	<link rel="canonical" href="https://haciendalosalgodones.com/promotions" />
 </head>
 <body>
-	<header>
+<header>
 		<div class="c-border u-hide__small"></div>
 		<div class="o-flex o-flex--middle c-header">
 			<div class="c-header__logo">
-				<a href="../index.html"><img src="../dist/img/logo-header.png" alt=""></a>
+				<a href="/"><img src="/dist/img/logo-header.png" alt=""></a>
 			</div>
 			<div class="c-header__menu-small">
 				<a href="">MENU</a>
@@ -20,11 +20,11 @@
 			<div class="c-header__nav">
 				<div class="c-header__links">
 					<ul class="o-flex u-mxa">
-						<li><a href="../rooms/">Rooms & Services</a></li>
-						<li><a href="../restaurant/">Restaurant</a></li>
-						<li><a href="../gallery/">Gallery</a></li>
-						<li><a href="../promotions/">Promotions</a></li>
-						<li><a href="../index.html#location-home">Location</a></li>
+						<li><a href="/rooms/">Rooms & Services</a></li>
+						<li><a href="/restaurant/">Restaurant</a></li>
+						<li><a href="/gallery/">Gallery</a></li>
+						<li><a href="/promotions/">Promotions</a></li>
+						<li><a href="/#location-home">Location</a></li>
 					</ul>
 				</div>
 			</div>
@@ -33,6 +33,9 @@
 				<button class="c-button-general c-button-general__cta">Book a Room</button>
 			</div>
 		</div>
+		<!-- Border -->
+			<div class="c-border u-show__small"></div>
+		<!-- Border -->
 
 	</header>
 
@@ -88,27 +91,58 @@
         			</div>
         		</div>
         		<div class="u-flex__full">
-	        		<form class="o-flex o-flex--center" action="http://api.forms.sanimedical.info/v1/send/sani_6WkpdGdN4NInvJRxr2aqcr5H" method="post">
-	        			<input type="text" class="c-form-input" placeholder="Full Name" name="full_name">
-	        			<input type="text" class="c-form-input" placeholder="Email" name="email">
-	        			<select class="c-form-input" name="gender">
+	        		<form action="http://api.forms.sanimedical.info/v1/send/sani_6WkpdGdN4NInvJRxr2aqcr5H" method="post">
+
+	        			<small class="is-error">Name Required</small>
+	        			<input type="text" class="c-form-input" placeholder="Full Name" name="full_name" required>
+
+	        			<small class="is-error">Email Required</small>
+	        			<input type="text" class="c-form-input" placeholder="Email" name="email" required>
+
+	        			<small class="is-error">Gender Required</small>
+	        			<select class="c-form-input" name="gender" required>
 							    <option>Gender</option>
 							    <option>Female</option>
 							    <option>Male</option>
 							  </select>
-	        			<input type="text" class="c-form-input" placeholder="Contact Number" name="phone">
-	        			<input type="text" class="c-form-input" placeholder="Desired Treatment" name="treatment">
-	        			<input type="date" class="c-form-input" placeholder="Desired Date" name="date_desired">
-	        			<select class="c-form-input" name="date_time">
+
+							  <small class="is-error">Contact Number Required</small>
+	        			<input type="text" class="c-form-input" placeholder="Contact Number" name="phone" maxlength="10" required>
+
+	        			<small class="is-error">Treatment Required</small>
+	        			<select class="c-form-input" name="treatment" required>
+	        				<option>Treatment Required</option>
+	        				<option value="Dental Implants">Dental Implants</option>
+	        				<option value="Dentures">Dentures</option>
+	        				<option value="Dental Crowns">Dental Crowns</option>
+	        				<option value="Full Mouth Restoration">Full Mouth Restoration</option>
+	        				<option value="Bone Graft/Sinus Lift">Bone Graft/Sinus Lift</option>
+	        				<option value="Cosmetics">Cosmetics</option>
+	        				<option value="Dental Laser">Dental Laser</option>
+	        				<option value="Dental Veneers">Dental Veneers</option>
+	        			</select>
+
+	        			<small class="is-error">Date Required</small>
+	        			<input type="date" class="c-form-input" placeholder="Desired Date" name="date_desired" required>
+
+	        			<small class="is-error">Time Required</small>
+	        			<select class="c-form-input" name="date_time" required>
 							    <option>Desired Time</option>
 							    <option>Morning</option>
-							    <option>Midday</option>
+							    <option>Mid-day</option>
 							    <option>Afternoon</option>
 							  </select>
-	        			<textarea class="c-form-input" rows="5" placeholder="Your message" name="message"></textarea>
-	        			<div class="u-flex__half u-my1">
-									<button class="u-px0 c-button-general c-button-general__purple" type="submit">Submit</button>
-					    	</div>
+
+							  <small class="is-error">Message Required</small>
+	        			<textarea class="c-form-input" rows="5" placeholder="Your message" name="message" required></textarea>
+
+	        			<div class="o-flex o-flex--center">
+	        				<div class="u-flex__half u-my1">
+										<button class="u-px0 c-button-general c-button-general__purple" type="submit">Submit</button>
+						    	</div>
+	        			</div>
+
+	        			<input type="hidden" name="redirect" value="https://haciendalosalgodones.com">
 	        		</form>
 	        	</div>
         	</div>
@@ -146,23 +180,23 @@
 				</div>
 				<div class="u-flex__third">
 					<ul class="c-footer__menu">
-						<li><a href="../index.html">Home</a></li>
-						<li><a href="../gallery/index.html">Gallery</a></li>
-						<li><a href="../rooms/index.html">Rooms & Rates</a></li>
-						<li><a href="../restaurant/index.html">Restaurant</a></li>
-						<li><a href="../rooms/index.html">Pet Policy</a></li>
-						<li><a href="../index.html#location-home">Location</a></li>
-						<li><a href="../rooms/index.html">Our Services</a></li>
+						<li><a href="/">Home</a></li>
+						<li><a href="/gallery/">Gallery</a></li>
+						<li><a href="/rooms/">Rooms & Rates</a></li>
+						<li><a href="/restaurant/">Restaurant</a></li>
+						<li><a href="/rooms/">Pet Policy</a></li>
+						<li><a href="/#location-home">Location</a></li>
+						<li><a href="/rooms/">Our Services</a></li>
 					</ul>
 				</div>
 				<div class="u-flex__third">
 					<div class="c-footer__social c-footer__info u-mb1">
 						<p><small>Follow Us</small></p>
-						<a href="https://es-la.facebook.com/HaciendaLosAlgodones/"><img src="../dist/img/facebook.png" alt=""></a>
+						<a href="https://es-la.facebook.com/HaciendaLosAlgodones/"><img src="/src/img/facebook.png" target="_blank"></a>
 					</div>
 					<div class="c-footer__info">
 						<small><span>BOOK YOUR ROOM</span><br></small>
-						<a class="c-footer__book" href="mailto:reservations@haciendalosalgodones.com?subject=Hello Hacienda Los Algodones"><b>MAKE YOUR RESERVATION<br></b>CLICK HERE</a>
+						<a class="c-footer__book" href="#"><b>MAKE YOUR RESERVATION<br></b>CLICK HERE</a>
 					</div>
 				</div>
 			</div>
@@ -170,8 +204,7 @@
 		<div class="c-footer__container-down">
 			<div class="o-container o-flex c-footer__content-down o-flex--middle">
 				<div class="u-flex__half">
-					<a href="#">Terms & Conditions</a>
-					<a class="c-footer__trip" href="https://www.tripadvisor.com/Hotel_Review-g642246-d2062866-Reviews-Hacienda_Los_Algodones-Los_Algodones_Baja_California.html">Tripadvisor</a>
+					<span>Rate us on </span><a class="c-footer__trip" href="https://www.tripadvisor.com/Hotel_Review-g642246-d2062866-Reviews-Hacienda_Los_Algodones-Los_Algodones_Baja_California.html" target="_blank">Tripadvisor</a>
 				</div>
 				<div class="u-flex__half">
 					<span>Copyright 2018 © Hacienda los Algodones</span>
