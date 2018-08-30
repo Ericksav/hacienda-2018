@@ -12,7 +12,7 @@
 		<div class="c-border u-hide__small"></div>
 		<div class="o-flex o-flex--middle c-header">
 			<div class="c-header__logo">
-				<a href="/"><img src="dist/img/logo-header.png" alt=""></a>
+				<a href="/"><img src="/dist/img/logo-header.png" alt=""></a>
 			</div>
 			<div class="c-header__menu-small">
 				<a href="">MENU</a>
@@ -110,7 +110,7 @@
 						</div>
 						<div class="c-content__trip-flex__text c-content__sani-text">
 							<h2 class="c-content-hacienda__title-trip u-mb2">We're Trip Advisor Certified</h2>
-							<a href="https://www.tripadvisor.com/Hotel_Review-g642246-d2062866-Reviews-Hacienda_Los_Algodones-Los_Algodones_Baja_California.html" class="c-button-general__green">Rate us</a>
+							<a href="https://www.tripadvisor.com/Hotel_Review-g642246-d2062866-Reviews-Hacienda_Los_Algodones-Los_Algodones_Baja_California.html" class="c-button-general__green" target="_blank">Rate us</a>
 						</div>
 					</div>
 				</div>
@@ -182,27 +182,30 @@
 									</div>
 								</div> -->
 			    			<small class="is-error">Error Full Name</small>
-			    			<input type="text" class="c-form-input" placeholder="Full Name" name="full_name">
+			    			<input type="text" class="c-form-input" placeholder="Full Name" name="full_name" required pattern="[a-zA-Z]+">
 			    		</div>
 			    		<div class="u-flex__31">
 			    			<small class="is-error">Error Email</small>
-			    			<input type="email" class="c-form-input" placeholder="Email" name="email">
+			    			<input type="email" class="c-form-input" placeholder="Email" name="email" required pattern="[a-zA-Z]+">
 			    		</div>
 			    		<div class="u-flex__31">
 			    			<small class="is-error">Error Phone</small>
-			    			<input type="tel" class="c-form-input" placeholder="Phone" name="phone">
+			    			<input type="tel" class="c-form-input" placeholder="Phone" name="phone" maxlength="10" required>
 			    		</div>
 			    	</div>
 
 			    	<div class="o-flex u-flex__full o-flex--justify o-flex--middle">
 			    		<div class="u-flex__22">
-			    			<input type="date" class="c-form-input" placeholder="Arrival" name="date_arrival">
+			    			<small class="is-error">Date of Arrival Required</small>
+			    			<input type="date" class="c-form-input" placeholder="Arrival" name="date_arrival" required>
 			    		</div>
 			    		<div class="u-flex__22">
-			    			<input type="date" class="c-form-input" placeholder="Departure" name="date_departure">
+			    			<small class="is-error">Date of Departure Required</small>
+			    			<input type="date" class="c-form-input" placeholder="Departure" name="date_departure" required>
 			    		</div>
 			    		<div class="u-flex__22">
-							  <select class="c-form-input" name="party">
+			    			<small class="is-error">Required</small>
+							  <select class="c-form-input" name="party" required>
 							    <option>Party</option>
 							    <option value="1">1</option>
 							    <option value="2">2</option>
@@ -212,7 +215,8 @@
 			    			<!-- <input type="text" class="c-form-input" placeholder="Party"> -->
 			    		</div>
 			    		<div class="u-flex__22">
-			    			<select class="c-form-input" name="room">
+			    			<small class="is-error">Type of Room Required</small>
+			    			<select class="c-form-input" name="room" required>
 							    <option>Room</option>
 							    <option value="Single">Single</option>
 							    <option value="Double">Double</option>
@@ -269,7 +273,8 @@
 									<p><small>MX Ph. <a href="tel:011526585173328">011 52 (658) 517 3328</a></small></p>
 								</div>
 								<div class="c-location__email">
-									<a class="c-button-general__brown-transparent" href="mailto:reservations@haciendalosalgodones.com?subject=Hello Hacienda Los Algodones">contact us</a>
+									<p><b>CONTACT US</b><br>
+									<small>reservations@haciendalosalgodones.com</small></p>
 								</div>
 								<h2 class="c-content-hacienda__title">find your way</h2>
 							</div>
@@ -277,7 +282,7 @@
 					</div>
 					<div class="u-flex__full o-flex c-location__maps o-flex--middle o-flex--center">
 						<img src="src/img/google-maps.jpg" alt="">
-						<a href="https://www.google.com.mx/maps/place/Hacienda+Los+Algodones/@32.7139348,-114.726837,15z/data=!4m2!3m1!1s0x0:0xdfc331d5b3d11ed3?sa=X&ved=0ahUKEwj9rcfYodPYAhVH72MKHZwFCnQQ_BIIlQEwCg" class="c-location__maps-button c-button-general__transparent">LOCATION</a>
+						<a href="https://www.google.com.mx/maps/place/Hacienda+Los+Algodones/@32.7139348,-114.726837,15z/data=!4m2!3m1!1s0x0:0xdfc331d5b3d11ed3?sa=X&ved=0ahUKEwj9rcfYodPYAhVH72MKHZwFCnQQ_BIIlQEwCg" class="c-location__maps-button c-button-general__transparent" target="_blank">LOCATION</a>
 					</div>
 				</div>
 			</div>
@@ -321,11 +326,11 @@
 				<div class="u-flex__third">
 					<div class="c-footer__social c-footer__info u-mb1">
 						<p><small>Follow Us</small></p>
-						<a href="https://es-la.facebook.com/HaciendaLosAlgodones/"><img src="src/img/facebook.png" alt=""></a>
+						<a href="https://es-la.facebook.com/HaciendaLosAlgodones/"><img src="src/img/facebook.png" target="_blank"></a>
 					</div>
 					<div class="c-footer__info">
 						<small><span>BOOK YOUR ROOM</span><br></small>
-						<a class="c-footer__book" href="mailto:reservations@haciendalosalgodones.com?subject=Hello Hacienda Los Algodones"><b>MAKE YOUR RESERVATION<br></b>CLICK HERE</a>
+						<a class="c-footer__book" href="#"><b>MAKE YOUR RESERVATION<br></b>CLICK HERE</a>
 					</div>
 				</div>
 			</div>
@@ -333,8 +338,7 @@
 		<div class="c-footer__container-down">
 			<div class="o-container o-flex c-footer__content-down o-flex--middle">
 				<div class="u-flex__half">
-					<a href="#">Terms & Conditions</a>
-					<a class="c-footer__trip" href="https://www.tripadvisor.com/Hotel_Review-g642246-d2062866-Reviews-Hacienda_Los_Algodones-Los_Algodones_Baja_California.html">Tripadvisor</a>
+					<span>Rate us on </span><a class="c-footer__trip" href="https://www.tripadvisor.com/Hotel_Review-g642246-d2062866-Reviews-Hacienda_Los_Algodones-Los_Algodones_Baja_California.html" target="_blank">Tripadvisor</a>
 				</div>
 				<div class="u-flex__half">
 					<span>Copyright 2018 © Hacienda los Algodones</span>
