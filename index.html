@@ -8,6 +8,7 @@
 	<link rel="canonical" href="https://haciendalosalgodones.com" />
 </head>
 <body>
+	<div id="app">
 	<header>
 		<div class="c-border u-hide__small"></div>
 		<div class="o-flex o-flex--middle c-header">
@@ -30,7 +31,7 @@
 			</div>
 			<div class="c-header__cta">
 				<span>REST IN BEAUTIFUL MEXICO</span>
-				<button class="c-button-general c-button-general__cta">Book a Room</button>
+				<button v-on:click="showContact" class="c-button-general c-button-general__cta">Book a Room</button>
 			</div>
 		</div>
 		<!-- Border -->
@@ -81,7 +82,7 @@
 						</div>
 					</div>
 					<div class="u-flex__full c-image__rooms-button">
-						<a href="/rooms/index.html" class="c-button-general__brown">Explore our rooms</a>
+						<a href="/rooms/" class="c-button-general__brown">Explore our rooms</a>
 					</div>
 				</div>
 			</div>
@@ -98,7 +99,7 @@
 							<p class="u-mb0"><b>Looking for dental work in mexico?</b></p>
 							<p class="u-mb2">Sani Dental Group in Los Algodones offers its patients special rates for their stay in Hacienda Los Algodones. <small>(Restrictions apply)</small></p>
 							<div class="u-flex__full">
-								<a href="/promotions/index.html" class="c-button-general__white">Click here</a>
+								<a href="/promotions/" class="c-button-general__white">Click here</a>
 							</div>
 						</div>
 					</div>
@@ -133,7 +134,7 @@
 						<p class="u-flex__full">Credit/Debit Cards with a 4% additional fee.</p>
 						<p class="u-flex__full">To avoid any additional fees you may also pay in traveler’s checks and cash.</p>
 						<h2 class="c-content-hacienda__title">We’re Pet Friendly</h2>
-						<p class="u-flex__full">Get to know our pet policy. <a class="" href="/rooms/index.html"><b>Click here</b></a></p>
+						<p class="u-flex__full">Get to know our pet policy. <a class="" href="/rooms/"><b>Click here</b></a></p>
 					</div>
 				</div>
 			<!-- Info -->
@@ -145,7 +146,7 @@
 						<h2 class="c-content-hacienda__title u-mb1">Try Our Authentic Mexican Food</h2>
 					</div>
 					<div class="u-flex__auto u-mb1">
-						<a href="/restaurant/index.html" class="c-button-general__brown">See more</a>
+						<a href="/restaurant/" class="c-button-general__brown">See more</a>
 					</div>
 				</div>
 				<div class="o-flex u-flex__full o-flex--justify c-restaurant__home-box">
@@ -169,12 +170,12 @@
 			
 			<!-- Booking Form -->
 			<!-- En el scss components.form, para visualizar el modal, hay que cambiarle la clase .c-booking a display: block, esta comentariada -->
-			<div id="app">
-			<div class="c-modal c-booking">
+			
+			<div class="c-modal c-booking"  v-show="visibleContact">
 			  <div class="c-modal__container c-booking__container">
 			    <h2 class="c-content-hacienda__title">Rest in beautiful mexico</h2>
-			    <p>Please fill in the forms below and we’ll get back to you as soon as possible with more information about your stay with Hacienda Los Algodones and your treatment at the dental clinic of your choice. All fields are required.</p>
-			    <form class="c-booking__form o-flex o-flex--center" action="http://api.forms.sanimedical.info/v1/send/sani_gk8N1fgUR1Xx3ckGeIy5M0pn" method="post">
+			    <p class="u-mb1">Please fill in the forms below and we’ll get back to you as soon as possible with more information about your stay with Hacienda Los Algodones and your treatment at the dental clinic of your choice. All fields are required.</p>
+			    <form @submit.prevent="validateBeforeSubmit" class="c-booking__form o-flex o-flex--center" action="http://api.forms.sanimedical.info/v1/send/sani_gk8N1fgUR1Xx3ckGeIy5M0pn" method="post">
 			    	<div class="o-flex u-flex__full o-flex--justify">
 			    		<div class="u-flex__31">
 			    			<!-- <div class="c-alert c-alert--error">
@@ -183,31 +184,37 @@
 									</div>
 								</div> -->
 			    			<small class="is-error">{{ errors.first('full_name') }}</small>
-			    			<input type="text" class="c-form-input" placeholder="Full Name" name="full_name" v-validate="'required|alpha'">
+			    			<small>Full Name</small>
+			    			<input type="text" class="c-form-input" name="full_name" v-validate="'required|alpha'">
 			    		</div>
 			    		<div class="u-flex__31">
+			    			<small>Email</small>
 			    			<small class="is-error">{{ errors.first('email') }}</small>
-			    			<input type="email" class="c-form-input" placeholder="Email" name="email" v-validate="'required|email'">
+			    			<input type="email" class="c-form-input" name="email" v-validate="'required|email'">
 			    		</div>
 			    		<div class="u-flex__31">
+			    			<small>Contact Number</small>
 			    			<small class="is-error">{{ errors.first('phone') }}</small>
-			    			<input type="tel" class="c-form-input" placeholder="Phone" name="phone" maxlength="10" v-validate="'required|numeric'">
+			    			<input type="tel" class="c-form-input" name="phone" maxlength="10" v-validate="'required|numeric'">
 			    		</div>
 			    	</div>
 
 			    	<div class="o-flex u-flex__full o-flex--justify o-flex--middle">
 			    		<div class="u-flex__22">
-			    			<small class="is-error">{{ errors.first('date_format_field') }}</small>
-			    			<input v-validate="'date_format:DD/MM/YYYY'" name="date_format_field" type="text" class="c-form-input" placeholder="Arrival">
+			    			<small class="is-error">{{ errors.first('date_arrival') }}</small>
+			    			<small>Arrival Date</small>
+			    			<input v-validate="'date_format:DD/MM/YYYY'" name="date_arrival" type="date" class="c-form-input today">
 			    		</div>
 			    		<div class="u-flex__22">
-			    			<small class="is-error">Date of Departure Required</small>
-			    			<input type="date" class="c-form-input" placeholder="Departure" name="date_departure" required>
+			    			<small class="is-error">{{ errors.first('date_departure') }}</small>
+			    			<small>Departure Date</small>
+			    			<input v-validate="'date_format:DD/MM/YYYY'" name="date_departure" type="date" class="c-form-input next">
 			    		</div>
 			    		<div class="u-flex__22">
-			    			<small class="is-error">Required</small>
-							  <select class="c-form-input" name="party" required>
-							    <option>Party</option>
+			    			<small class="is-error">{{ errors.first('party') }}</small>
+			    			<small>Party</small>
+							  <select class="c-form-input" v-validate="'included:1,2,3,4'" name="party" data-vv-as="selected">
+							    <option></option>
 							    <option value="1">1</option>
 							    <option value="2">2</option>
 							    <option value="3">3</option>
@@ -216,9 +223,10 @@
 			    			<!-- <input type="text" class="c-form-input" placeholder="Party"> -->
 			    		</div>
 			    		<div class="u-flex__22">
-			    			<small class="is-error">Type of Room Required</small>
-			    			<select class="c-form-input" name="room" required>
-							    <option>Room</option>
+			    			<small class="is-error">{{ errors.first('room') }}</small>
+			    			<small>Type of room</small>
+			    			<select class="c-form-input" name="room" v-validate="'included:Single,Double,Suite'" data-vv-as="selected">
+							    <option></option>
 							    <option value="Single">Single</option>
 							    <option value="Double">Double</option>
 							    <option value="Suite">Suite</option>
@@ -226,9 +234,9 @@
 			    		</div>
 			    	</div>
 
-			    	<div class="o-flex u-flex__full u-mb1">
+			    	<!-- <div class="o-flex u-flex__full u-mb2 u-my2">
 			    		<span><b>Want to add another guest? </b><a href="">Click here</a></span>
-			    	</div>
+			    	</div> -->
 
 			    	<!-- <div class="o-flex u-flex__full o-flex--justify u-mb1">
 			    		<div class="u-flex__full">
@@ -249,11 +257,10 @@
 			    	<input type="hidden" name="redirect" value="https://haciendalosalgodones.com">
 
 					</form>
-			    <button type="button" class="c-modal__close c-booking__container-close" aria-label="close">
-			      <span aria-hidden="true">&times;</span>
+			    <button type="sumbit" class="c-modal__close c-booking__container-close" aria-label="close">
+			      <span v-on:click="hideContact" aria-hidden="true">&times;</span>
 			    </button>
 			  </div>
-			</div>
 			</div>
 			<!-- Booking Form -->
 
@@ -349,6 +356,7 @@
 		</div>
 	</footer>
 	<!-- Footer -->
+	</div><!-- END APP VUE -->
 	<script src="./dist/bundle.js"></script>
 </body>
 </html>
