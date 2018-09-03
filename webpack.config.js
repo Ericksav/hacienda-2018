@@ -19,7 +19,17 @@ module.exports = {
   module: {
       rules:
       [
-      	{
+        { // Javascripts
+          test: /\.js$/,
+          exclude: /node_modules/,
+          use: {
+            loader: 'babel-loader',
+            options: {
+              presets: ['env']
+            }
+          }
+        },
+      	{ // Scss
           test: /\.(sass|scss)$/,
           use: [{
               loader: "style-loader" // creates style nodes from JS strings
