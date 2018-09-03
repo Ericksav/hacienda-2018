@@ -6,7 +6,6 @@
 	color: $white !important;
 	font-size: rem(18);
 	text-transform: capitalize;
-	transition: all .6s ease-out;
 	text-align: center;
 	&:hover,
 	&:active, 
@@ -14,6 +13,7 @@
 		background-color: transparent;
 		color: $brand-light-blue !important;
 		border-color: $brand-light-blue !important;
+		transition: all .6s ease-out;
 	}
 	&__brown{
 		background-color: $brand-light-brown;
@@ -21,13 +21,13 @@
 		padding: rem(10) rem(20);
   	width: 100%;
   	color: $white !important;
-  	transition: all .6s ease-out;
   	&:hover,
 		&:active, 
 		&:focus{
 			background-color: transparent;
 			color: $brand-light-brown !important;
 			border-color: $brand-light-brown !important;
+			transition: all .6s ease-out;
 		}
 		&-transparent{
 			background-color: transparent;
@@ -37,13 +37,13 @@
 			padding: rem(10) rem(20);
 	  	width: 100%;
 	  	color: $brand-dark-brown !important;
-	  	transition: all .6s ease-out;
 	  	&:hover,
 			&:active, 
 			&:focus{
 				background-color: transparent;
 				color: $brand-dark-brown !important;
 				border-color: $brand-dark-brown !important;
+				transition: all .6s ease-out;
 			}
 		}
 	}
@@ -53,13 +53,13 @@
 		padding: rem(10) rem(50);
   	width: 100%;
   	color: $dark-gray !important;
-  	transition: all .6s ease-out;
   	&:hover,
 		&:active, 
 		&:focus{
 			background-color: transparent;
 			color: $white !important;
 			border-color: $white !important;
+			transition: all .6s ease-out;
 		}
 	}
 	&__green{
@@ -68,13 +68,13 @@
 		padding: rem(10) rem(70);
   	width: 100%;
   	color: $white !important;
-  	transition: all .6s ease-out;
   	&:hover,
 		&:active, 
 		&:focus{
 			background-color: transparent;
 			color: $brand-green-trip !important;
 			border-color: $brand-green-trip !important;
+			transition: all .6s ease-out;
 		}
 	}
 	&__purple{
@@ -83,7 +83,6 @@
 		padding: rem(10) rem(70);
   	width: 100%;
   	color: $white !important;
-  	transition: all .6s ease-out;
   	text-align: center;
   	&:hover,
 		&:active, 
@@ -91,6 +90,7 @@
 			background-color: transparent;
 			color: $brand-purple-dark-sani !important;
 			border-color: $brand-purple-dark-sani !important;
+			transition: all .6s ease-out;
 		}
 	}
 	&__transparent{
@@ -99,7 +99,6 @@
 		padding: rem(10) rem(20);
   	width: 100%;
   	color: $white !important;
-  	transition: all .6s ease-out;
   	text-align: center;
   	font-weight: 700;
   	&:hover,
@@ -108,6 +107,7 @@
 			background-color: $brand-dark-brown;
 			color: $white !important;
 			border-color: $brand-dark-brown !important;
+			transition: all .6s ease-out;
 		}
 	}
 }
