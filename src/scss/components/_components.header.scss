@@ -194,5 +194,10 @@
 			left: 20rem;
 			font-size: 6rem;
 		}
+		@include breakpoint(xl){
+			top: 30%;
+			left: 32%;
+			font-size: 6rem;
+		}
 	}
 }
