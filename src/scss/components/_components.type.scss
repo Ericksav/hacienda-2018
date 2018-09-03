@@ -8,9 +8,9 @@ $body-font-family:            'Open Sans', sans-serif;
 
 a{
 	text-decoration: none;
-	transition: all .3s ease-out;
 	&:hover{
 		text-decoration: none;
+		transition: all .3s ease-out;
 	}
 }
 body{

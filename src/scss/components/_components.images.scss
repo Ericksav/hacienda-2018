@@ -17,21 +17,18 @@
 		position: relative;
 	}
 	&__frame{
-		transition: all .6s ease-out;
 		position: relative;
 		background-color: $white;
 		padding: rem(10);
 		top: rem(-70);
 	}
 	&__frame-home{
-		transition: all .6s ease-out;
 		position: relative;
 		background-color: $white;
 		padding: rem(10);
 		top: 0;
 	}
 	&__frame-restaurant-home{
-		transition: all .6s ease-out;
 		position: relative;
 		background-color: $white;
 		padding: rem(10);
@@ -40,12 +37,6 @@
 	&__text{
 		color: $dark-gray;
 		margin-bottom: 0;
-	}
-	&:hover{
-		.c-image__frame,
-		.c-image__frame-restaurant-home{
-			background-color: rgba(252,252,252,.5);
-		}
 	}
 	&__home-rooms{
 		flex: 0 0 100%;
