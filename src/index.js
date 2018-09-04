@@ -19,7 +19,6 @@ new Vue({
           alert('Format submitted');
           return;
         }
-
         alert('Please fill out all the required fields');
       });
     },
