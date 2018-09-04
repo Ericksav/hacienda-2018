@@ -12,14 +12,13 @@ new Vue({
 		visibleContact: false
 	},
   methods: {
-    validateBeforeSubmit() {
-      this.$validator.validateAll().then((result) => {
+    validateForm(scope) {
+      this.$validator.validateAll(scope).then((result) => {
         if (result) {
           // eslint-disable-next-line
-          alert('Format submitted');
-          return;
+          alert('Form Submitted!');
         }
-        alert('Please fill out all the required fields');
+        return;
       });
     },
 		showContact() {
