@@ -1,5 +1,4 @@
 .c-image{
-	// max-height: rem(280);
 	&__rooms {
 		margin-bottom: rem(20);
 		@include breakpoint (md) {
@@ -15,28 +14,6 @@
 			margin: 0;
 		}
 	}
-	// &__frame {
-	// 	position: relative;
-	// 	background-color: $white;
-	// 	padding: rem(10);
-	// 	top: rem(-70);
-	// }
-	// &__frame-home {
-	// 	position: relative;
-	// 	background-color: $white;
-	// 	padding: rem(10);
-	// 	top: 0;
-	// }
-	// &__frame-restaurant-home {
-	// 	position: relative;
-	// 	background-color: $white;
-	// 	padding: rem(10);
-	// 	top: rem(-100);
-	// }
-	// &__text {
-	// 	color: $dark-gray;
-	// 	margin-bottom: 0;
-	// }
 	&__home-rooms {
 		flex: 0 0 100%;
 		width: 100%;
@@ -51,13 +28,9 @@
 		@include breakpoint (md) {
 			flex: 0 0 48%;
 			width: 48%;
-			// margin-bottom: rem(20);
 		}
 		&-thumb {
 			margin-bottom: rem(5);
 		}
-		// @include breakpoint (lg){
-		// 	margin-bottom: 0; 
-		// }
 	}
 }
