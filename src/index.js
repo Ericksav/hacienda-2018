@@ -29,7 +29,7 @@ new Vue({
 		}
   },
   components: {
-  	name: 'form-contact'
+  	name: 'contact-form'
   }
 });
 
