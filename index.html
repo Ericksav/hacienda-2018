@@ -184,40 +184,36 @@
 			    	<div class="o-flex u-flex__full o-flex--justify">
 
 			    		<div class="u-flex__31">
-			    			<small>Full Name</small>
 			    			<p class="u-mb0"><small class="is-error">{{ errors.first('form-1.full_name') }}</small></p>
-			    			<input type="text" class="c-form-input" name="full_name" v-validate="'required|alpha'">
+			    			<input type="text" placeholder="Your Name"class="c-form-input c-booking__form-input" name="full_name" v-validate="'required|alpha'">
 			    		</div>
 
 			    		<div class="u-flex__31">
-			    			<small>Email</small>
 			    			<p class="u-mb0"><small class="is-error">{{ errors.first('form-1.email') }}</small></p>
-			    			<input type="email" class="c-form-input" name="email" v-validate="'required|email'">
+			    			<input type="email" placeholder="Email"class="c-form-input c-booking__form-input" name="email" v-validate="'required|email'">
 			    		</div>
 
 			    		<div class="u-flex__31">
-			    			<small>Contact Number</small>
 			    			<p class="u-mb0"><small class="is-error">{{ errors.first('form-1.phone') }}</small></p>
-			    			<input type="tel" class="c-form-input" name="phone" maxlength="10" v-validate="'required|numeric'">
+			    			<input type="tel" placeholder="Contact Number"class="c-form-input c-booking__form-input" name="phone" maxlength="10" v-validate="'required|numeric'">
 			    		</div>
 			    	</div>
 
 			    	<div class="o-flex u-flex__full o-flex--justify o-flex--middle">
 			    		<div class="u-flex__22">
-			    			<small>Arrival Date</small>
 			    			<p class="u-mb0"><small class="is-error">{{ errors.first('form-1.date_arrival') }}</small></p>
-			    			<input v-validate="'date_format:DD/MM/YYYY'" name="date_arrival" type="text" class="c-form-input today">
+			    			<datepicker placeholder="Arrival Date" v-validate="'date_format:DD/MM/YYYY'" name="date_arrival" class="c-form-input c-booking__form-input"></datepicker>
+			    			<!-- <input v-validate="'date_format:DD/MM/YYYY'" name="date_arrival" type="text" class="c-form-input today"> -->
 			    		</div>
 			    		<div class="u-flex__22">
-			    			<small>Departure Date</small>
 			    			<p class="u-mb0"><small class="is-error">{{ errors.first('form-1.date_departure') }}</small></p>
-			    			<input v-validate="'date_format:DD/MM/YYYY'" name="date_departure" type="text" class="c-form-input next">
+			    			<datepicker placeholder="Departure Date" v-validate="'date_format:DD/MM/YYYY'" name="date_departure" class="c-form-input c-booking__form-input"></datepicker>
+			    			<!-- <input v-validate="'date_format:DD/MM/YYYY'" name="date_departure" type="text" class="c-form-input  c-booking__form-inputnext"> -->
 			    		</div>
 			    		<div class="u-flex__22">
-			    			<small>Party</small>
 			    			<p class="u-mb0"><small class="is-error">{{ errors.first('form-1.party') }}</small></p>
-							  <select class="c-form-input" v-validate="'included:1,2,3,4'" name="party" data-vv-as="selected">
-							    <option value="0"></option>
+							  <select class="c-form-input c-booking__form-input" v-validate="'included:1,2,3,4'" name="party" data-vv-as="selected">
+							    <option value="0">Party</option>
 							    <option value="1">1</option>
 							    <option value="2">2</option>
 							    <option value="3">3</option>
@@ -226,10 +222,9 @@
 			    			<!-- <input type="text" class="c-form-input" placeholder="Party"> -->
 			    		</div>
 			    		<div class="u-flex__22">
-			    			<small>Type of room</small>
 			    			<p class="u-mb0"><small class="is-error">{{ errors.first('form-1.room') }}</small></p>
-			    			<select class="c-form-input" name="room" v-validate="'included:Single,Double,Suite'" data-vv-as="selected">
-							    <option value="0"></option>
+			    			<select class="c-form-input c-booking__form-input" name="room" v-validate="'included:Single,Double,Suite'" data-vv-as="selected">
+							    <option value="0">Room</option>
 							    <option value="Single">Single</option>
 							    <option value="Double">Double</option>
 							    <option value="Suite">Suite</option>

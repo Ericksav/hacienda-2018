@@ -1,6 +1,7 @@
 import './scss/style.scss';
 import Vue from 'vue';
 import VeeValidate from 'vee-validate';
+import Datepicker from 'vuejs-datepicker';
 
 console.log('Si Sirvo');
 
@@ -16,7 +17,8 @@ new Vue({
       this.$validator.validateAll(scope).then((result) => {
         if (result) {
           // eslint-disable-next-line
-          alert('Form Submitted!');
+          alert('Thank You!');
+          this.visibleContact = !this.visibleContact;
         }
         return;
       });
@@ -29,7 +31,7 @@ new Vue({
 		}
   },
   components: {
-  	name: 'contact-form'
+  	Datepicker
   }
 });
 

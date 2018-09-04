@@ -17,8 +17,8 @@
 		}
 	}
 	&__form{
-		input,select, input[type="tel"]{
-			border: 1px solid $brand-light-peach;
+		&-input{
+			border: 1px solid $brand-light-peach !important;
 			border-radius: 0 !important;
 			color: $dark-gray !important;
 			font-weight: 500;
@@ -30,8 +30,8 @@
 }
 
 
-
-input[type=tel], select, input[type=date]{
+select, input[type=text], input[type=tel]{
+	border: none;
 	border-radius: 0 !important;
 	display: block;
   width: 100%;
