@@ -1,60 +1,54 @@
 .c-image{
-	max-height: rem(280);
-	&__rooms{
-		margin-bottom: rem(25);
-		@include breakpoint (md){
+	// max-height: rem(280);
+	&__rooms {
+		margin-bottom: rem(20);
+		@include breakpoint (md) {
 			padding: rem(10);
 		}
+		&-thumb {
+			margin-bottom: rem(5);
+		}
 	}
-	&__rooms-button{
-		margin: rem(20) 0 0;
-		@include breakpoint (md){
+	&__rooms-button {
+		@include breakpoint (md) {
 			padding: rem(10);
 			margin: 0;
 		}
 	}
-	img{
-		position: relative;
-	}
-	&__frame{
-		position: relative;
-		background-color: $white;
-		padding: rem(10);
-		top: rem(-70);
-	}
-	&__frame-home{
-		position: relative;
-		background-color: $white;
-		padding: rem(10);
-		top: 0;
-	}
-	&__frame-restaurant-home{
-		position: relative;
-		background-color: $white;
-		padding: rem(10);
-		top: rem(-100);
-	}
-	&__text{
-		color: $dark-gray;
-		margin-bottom: 0;
-	}
-	&__home-rooms{
+	// &__frame {
+	// 	position: relative;
+	// 	background-color: $white;
+	// 	padding: rem(10);
+	// 	top: rem(-70);
+	// }
+	// &__frame-home {
+	// 	position: relative;
+	// 	background-color: $white;
+	// 	padding: rem(10);
+	// 	top: 0;
+	// }
+	// &__frame-restaurant-home {
+	// 	position: relative;
+	// 	background-color: $white;
+	// 	padding: rem(10);
+	// 	top: rem(-100);
+	// }
+	// &__text {
+	// 	color: $dark-gray;
+	// 	margin-bottom: 0;
+	// }
+	&__home-rooms {
 		flex: 0 0 100%;
 		width: 100%;
-		margin-bottom: rem(100);
-		@include breakpoint (md){
+		@include breakpoint (md) {
 			flex: 0 0 32%;
 			width: 32%;
-			margin-bottom: rem(20);
-		}
-		@include breakpoint (lg){
-			margin-bottom: 0; 
 		}
 	}
-	&__home-restaurant{
+	&__home-restaurant {
 		flex: 0 0 100%;
 		width: 100%;
-		@include breakpoint (md){
+		@include breakpoint (md) {
 			flex: 0 0 48%;
 			width: 48%;
 			// margin-bottom: rem(20);

@@ -1,26 +1,26 @@
 .c-room{
 	&__content{
-		@include breakpoint (lg){
+		@include breakpoint (lg) {
 			flex: 0 0 65%;
 			width: 65%;
 			padding-left: 0;
 			padding-right: rem(20);
 		}
 	}
-	&__sidebar{
-		@include breakpoint (lg){
+	&__sidebar {
+		@include breakpoint (lg) {
 			flex: 0 0 35%;
 			width: 35%;
 			padding-left: rem(20);
 			padding-top: 0;
 		}
 	}
-	&__description{
+	&__description {
 		padding: rem(10);
 		border: rem(2) solid $brand-light-peach;
 		color: $brand-dark-brown;
 	}
-	&__type{
+	&__type {
 		padding-left: rem(8);
 		border-left-width: rem(3);
     border-left-style: solid;
