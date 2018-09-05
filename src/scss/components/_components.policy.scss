@@ -1,7 +1,7 @@
 .c-policy{
-	// display: block;
+	display: block;
 	&__container{
-		animation: createModal 1s;
+		animation: createModal .7s;
 		// animation: closeModal 0.5s;
 		padding: rem(30);
 		border-radius: 0;

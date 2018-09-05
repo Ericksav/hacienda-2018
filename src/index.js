@@ -17,8 +17,12 @@ window.axios.defaults.headers.common = {
 new Vue({
   el: '#app',
   data: {
+
 		visibleContact: false,
+    visiblePolicy: false,
+
     showInside: false,
+
     contactData: {
       full_name: '',
       email: '',
@@ -44,12 +48,21 @@ new Vue({
         return;
       });
     },
+
 		showContact() {
 			this.visibleContact = !this.visibleContact;
 		},
 		hideContact() {
 			this.visibleContact = !this.visibleContact;
 		},
+
+    showPolicy() {
+      this.visiblePolicy = !this.visiblePolicy;
+    },
+    hidePolicy() {
+      this.visiblePolicy = !this.visiblePolicy;
+    },
+    
     show: function () {
       this.showInside = !this.showInside; 
     },
