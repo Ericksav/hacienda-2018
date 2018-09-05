@@ -18,6 +18,7 @@ new Vue({
   el: '#app',
   data: {
 		visibleContact: false,
+    // showInside: false,
     contactData: {
       full_name: '',
       email: '',
@@ -49,11 +50,44 @@ new Vue({
 		hideContact() {
 			this.visibleContact = !this.visibleContact;
 		}
+    // show: function () {
+    //   this.showInside = !this.showInside; 
+    // },
+    // hide: function () { 
+    //   console.log('hide')
+    //   this.showInside = !this.showInside;
+    // }
+  },
+  events: {
+    closeEvent: function () {
+      console.log('close event called')
+      this.hide()
+    }
   },
   components: {
   	Datepicker
   }
 });
+
+// Vue.directive('click-outside', {
+//   priority: 700,
+//   bind () {
+//     let self  = this
+//     this.event = function (event) { 
+//       console.log('emitting event')
+//       self.vm.$emit(self.expression,event) 
+//     }
+//     this.el.addEventListener('click', this.stopProp)
+//     document.body.addEventListener('click',this.event)
+//   },
+  
+//   unbind() {
+//     console.log('unbind')
+//     this.el.removeEventListener('click', this.stopProp)
+//     document.body.removeEventListener('click',this.event)
+//   },
+//   stopProp(event) {event.stopPropagation() }
+// });
 
 
 Vue.component('form-contact', {
