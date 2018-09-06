@@ -35,6 +35,7 @@ new Vue({
     },
 	},
   methods: {
+
     validateForm(scope) {
 
       let uri = 'http://api.forms.sanimedical.info/v1/send/sani_gk8N1fgUR1Xx3ckGeIy5M0pn';
@@ -73,13 +74,11 @@ new Vue({
       this.showInside = !this.showInside; 
     },
     hide: function () { 
-      // console.log('hide')
       this.showInside = !this.showInside;
     }
   },
   events: {
     closeEvent: function () {
-      // console.log('close event called')
       this.hide()
     }
   },
@@ -88,12 +87,12 @@ new Vue({
   }
 });
 
+//Click fuera de modal se cierra
 Vue.directive('click-outside', {
   priority: 700,
   bind () {
     let self  = this
     this.event = function (event) { 
-      // console.log('emitting event')
       self.vm.$emit(self.expression,event) 
     }
     this.el.addEventListener('click', this.stopProp)
@@ -101,7 +100,6 @@ Vue.directive('click-outside', {
   },
   
   unbind() {
-    // console.log('unbind')
     this.el.removeEventListener('click', this.stopProp)
     document.body.removeEventListener('click',this.event)
   },
@@ -110,6 +108,6 @@ Vue.directive('click-outside', {
 
 
 // Vue.component('form-contact', {
-//   template: '<h1>You clicked me times.</h1>'
+//   template: "<h1>You clicked me times.</h1>"
 // });
 
