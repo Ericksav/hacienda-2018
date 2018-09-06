@@ -20,6 +20,7 @@ new Vue({
 
 		visibleContact: false,
     visiblePolicy: false,
+    visibleMenu: false,
 
     showInside: false,
 
@@ -43,7 +44,8 @@ new Vue({
           // eslint-disable-next-line
           axios.post(uri, this.contactData)
           alert('Thank You!');
-          this.visibleContact = !this.visibleContact;
+          // this.visibleContact = !this.visibleContact;
+          this.showInside = !this.showInside;
         }
         return;
       });
@@ -62,7 +64,11 @@ new Vue({
     hidePolicy() {
       this.visiblePolicy = !this.visiblePolicy;
     },
-    
+
+    showMenu() {
+      this.visibleMenu = !this.visibleMenu;
+    },
+
     show: function () {
       this.showInside = !this.showInside; 
     },
