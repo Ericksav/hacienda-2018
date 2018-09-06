@@ -30,8 +30,8 @@ new Vue({
       phone: '',
       date_arrival: '',
       date_departure: '',
-      party: '',
-      room: ''
+      party: '0',
+      room: '0'
     },
 	},
   methods: {
@@ -78,7 +78,7 @@ new Vue({
     }
   },
   events: {
-    closeEvent: function () {
+    closeEvent: function (event) {
       this.hide()
     }
   },
@@ -89,22 +89,18 @@ new Vue({
 
 //Click fuera de modal se cierra
 Vue.directive('click-outside', {
-  priority: 700,
   bind () {
-    let self  = this
-    this.event = function (event) { 
-      self.vm.$emit(self.expression,event) 
-    }
-    this.el.addEventListener('click', this.stopProp)
-    document.body.addEventListener('click',this.event)
-  },
-  
+      this.event = event => this.vm.$emit(this.expression, event)
+      this.el.addEventListener('click', this.stopProp)
+      document.body.addEventListener('click', this.event)
+  },   
   unbind() {
     this.el.removeEventListener('click', this.stopProp)
-    document.body.removeEventListener('click',this.event)
+    document.body.removeEventListener('click', this.event)
   },
-  stopProp(event) {event.stopPropagation() }
-});
+
+  stopProp(event) { event.stopPropagation() }
+})
 
 
 // Vue.component('form-contact', {
