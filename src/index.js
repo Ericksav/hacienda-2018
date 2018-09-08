@@ -24,6 +24,8 @@ new Vue({
 
     showInside: false,
 
+    isActive: false,
+
     contactData: {
       full_name: '',
       email: '',
@@ -52,6 +54,15 @@ new Vue({
       });
     },
 
+    // getDate () {
+    //   const toTwoDigits = num => num < 10 ? '0' + num : num;
+    //   let today = new Date();
+    //   let year = today.getFullYear();
+    //   let month = toTwoDigits(today.getMonth() + 1);
+    //   let day = toTwoDigits(today.getDate());
+    //   return `${year}-${month}-${day}`;
+    // },
+
 		showContact() {
 			this.visibleContact = !this.visibleContact;
 		},
@@ -70,37 +81,61 @@ new Vue({
       this.visibleMenu = !this.visibleMenu;
     },
 
-    show: function () {
-      this.showInside = !this.showInside; 
+    // show: function () {
+    //   this.showInside = !this.showInside; 
+    // },
+    // hide: function () { 
+    //   this.showInside = !this.showInside;
+    // }
+
+    show: function() {
+      this.isActive = true;
     },
-    hide: function () { 
-      this.showInside = !this.showInside;
+    hide: function() {
+      this.isActive = false;
     }
   },
-  events: {
-    closeEvent: function (event) {
-      this.hide()
-    }
-  },
+  // events: {
+  //   closeEvent: function (event) {
+  //     this.hide()
+  //   }
+  // },
   components: {
   	Datepicker
   }
 });
 
 //Click fuera de modal se cierra
+// Vue.directive('click-outside', {
+//   bind () {
+//       this.event = event => this.vm.$emit(this.expression, event)
+//       this.el.addEventListener('click', this.stopProp)
+//       document.body.addEventListener('click', this.event)
+//   },   
+//   unbind() {
+//     this.el.removeEventListener('click', this.stopProp)
+//     document.body.removeEventListener('click', this.event)
+//   },
+
+//   stopProp(event) { event.stopPropagation() }
+// })
+
 Vue.directive('click-outside', {
-  bind () {
-      this.event = event => this.vm.$emit(this.expression, event)
-      this.el.addEventListener('click', this.stopProp)
-      document.body.addEventListener('click', this.event)
-  },   
-  unbind() {
-    this.el.removeEventListener('click', this.stopProp)
+  bind: function (el, binding, vnode) {
+    this.event = function (event) {
+      if (!(el == event.target || el.contains(event.target))) {
+        vnode.context[binding.expression](event);
+      }
+    };
+    document.body.addEventListener('click', this.event)
+  },
+  unbind: function (el) {
     document.body.removeEventListener('click', this.event)
   },
-
-  stopProp(event) { event.stopPropagation() }
-})
+  closeEvent: function (event) {
+    this.hide()
+  },
+});
 
 
 // Vue.component('form-contact', {

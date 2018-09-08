@@ -31,7 +31,7 @@
 			</div>
 			<div class="c-header__cta">
 				<span>REST IN BEAUTIFUL MEXICO</span>
-				<button  @click.stop="show" class="c-button-general c-button-general__cta">Book a Room</button> <!-- v-on:click="showContact" -->
+				<button  v-on:click="showContact" class="c-button-general c-button-general__cta">Book a Room</button> <!-- v-on:click="showContact" -->
 			</div>
 		</div>
 		<!-- Border -->
@@ -173,7 +173,7 @@
 			<!-- Restaurant -->
 			
 			<!-- Booking Form -->
-			<div class="c-modal c-booking" v-if="showInside" v-click-outside="closeEvent">  <!-- v-show="visibleContact" @click="hideContact" -->
+			<div class="c-modal c-booking" v-show="visibleContact" @click="show" v-click-outside="hide" v-bind:class="{active: isActive}">  <!-- v-show="visibleContact" @click="hideContact" -->
 			  <div class="c-modal__container c-booking__container" v-on:keyup.esc="hideContact">
 			    <h2 class="c-content-hacienda__title">Rest in beautiful mexico</h2>
 			    <p class="u-mb1">Please fill in the forms below and we’ll get back to you as soon as possible with more information about your stay with Hacienda Los Algodones and your treatment at the dental clinic of your choice. All fields are required.</p>
@@ -262,7 +262,7 @@
 
 					</form>
 			    <button type="sumbit" class="c-modal__close c-booking__container-close" aria-label="close">
-			      <span @click="hide" aria-hidden="true">&times;</span> <!-- v-on:click="hideContact" -->
+			      <span @click="hide" v-on:click="hideContact" aria-hidden="true">&times;</span> <!-- v-on:click="hideContact" -->
 			    </button>
 			  </div>
 			</div>
