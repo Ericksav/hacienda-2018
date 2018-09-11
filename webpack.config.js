@@ -3,6 +3,7 @@ const path = require('path');
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 var ImageminPlugin = require('imagemin-webpack-plugin').default;
 var CopyWebpackPlugin = require('copy-webpack-plugin');
+const VueLoaderPlugin = require('vue-loader/lib/plugin');
 
 module.exports = {
   entry: './src/index.js',
@@ -58,6 +59,10 @@ module.exports = {
             //the images will be emmited to public/assets/images/ folder 
             //the images will be put in the DOM <style> tag as eg. background: url(assets/images/image.png); 
           }
+        },
+        {
+          test: /\.vue$/,
+          loader: 'vue-loader'
         }
       ]
     },
@@ -72,10 +77,12 @@ module.exports = {
           "./src/*.js",
           "./*.html",
           "./templates/*.html",
-          "./src/templates/*.html",
-          "./src/scss/**/*.scss"
+          "./src/scss/**/*.scss",
+          "./*.vue"
+          "./src/components/*.vue"
         ]
     }),
+    new VueLoaderPlugin(),
     // Copy the images folder and optimize all the images
     new CopyWebpackPlugin([
       {

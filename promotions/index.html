@@ -109,8 +109,8 @@
 
 	        			<span style="color: #05529d;">Gender </span>
 	        			<p class="u-mb0"><small class="is-error">{{ errors.first('form-2.gender') }}</small></p>
-	        			<select class="c-form-input" v-validate="'included:Female,Male'" name="gender" data-vv-as="selected" v-model="saniData.gender">
-							    <option value="0"></option>
+	        			<select class="c-form-input" v-validate="'required|included:Female,Male'" name="gender" data-vv-as="selected" v-model="saniData.gender">
+							    <option value=""></option>
 							    <option value="Female">Female</option>
 							    <option value="Male">Male</option>
 							  </select>
@@ -121,8 +121,8 @@
 
 	        			<span style="color: #05529d;">Treatments Desired </span>
 	        			<p class="u-mb0"><small class="is-error">{{ errors.first('form-2.treatment') }}</small></p>
-	        			<select class="c-form-input" name="treatment" v-validate="'included:Dental Implants,Dentures,Dental Crowns,Full Mouth Restoration,Bone Graft/Sinus Lift,Cosmetics,Dental Laser,Dental Veneers'" v-model="saniData.treatment" data-vv-as="selected">
-	        				<option value="0"></option>
+	        			<select class="c-form-input" name="treatment" v-validate="'required|included:Dental Implants,Dentures,Dental Crowns,Full Mouth Restoration,Bone Graft/Sinus Lift,Cosmetics,Dental Laser,Dental Veneers'" v-model="saniData.treatment" data-vv-as="selected">
+	        				<option value=""></option>
 	        				<option value="Dental Implants">Dental Implants</option>
 	        				<option value="Dentures">Dentures</option>
 	        				<option value="Dental Crowns">Dental Crowns</option>
@@ -135,12 +135,12 @@
 
 	        			<span style="color: #05529d;">Desired Date </span>
     						<p class="u-mb0"><small class="is-error">{{ errors.first('form-2.date_desired') }}</small></p>
-			    			<datepicker v-validate="'date_format:DD/MM/YYYY'" name="date_desired" v-model="saniData.date_desired" class="c-form-input"></datepicker>
+			    			<datepicker v-validate="'required|date_format:DD/MM/YYYY'" name="date_desired" v-model="saniData.date_desired" class="c-form-input"></datepicker>
 
 	        			<span style="color: #05529d;">Desired Time</span>
 	        			<p class="u-mb0"><small class="is-error">{{ errors.first('form-2.date_time') }}</small></p>
-	        			<select class="c-form-input" name="date_time" v-validate="'included:Morning,Mid-Day,Afternoon'" data-vv-as="selected" v-model="saniData.date_time">
-							    <option value="0"></option>
+	        			<select class="c-form-input" name="date_time" v-validate="'required|included:Morning,Mid-Day,Afternoon'" data-vv-as="selected" v-model="saniData.date_time">
+							    <option value=""></option>
 							    <option value="Morning">Morning</option>
 							    <option value="Mid-Day">Mid-day</option>
 							    <option value="Afternoon">Afternoon</option>
