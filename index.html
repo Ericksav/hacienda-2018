@@ -31,7 +31,7 @@
 			</div>
 			<div class="c-header__cta">
 				<span>REST IN BEAUTIFUL MEXICO</span>
-				<button  v-on:click="showContact" class="c-button-general c-button-general__cta">Book a Room</button> <!-- v-on:click="showContact" -->
+				<button  @click="show = true" class="c-button-general c-button-general__cta">Book a Room</button> <!-- v-on:click="showContact" -->
 			</div>
 		</div>
 		<!-- Border -->
@@ -59,7 +59,6 @@
 			<!-- Intro -->
 			<div class="o-flex u-flex__full u-my1">
 				<div class="o-flex u-flex__half">
-					<form-contact></form-contact>
 					<h2 class="c-content-hacienda__title">Welcome to Los Algodones</h2>
 					<p class="u-mb0">Over the years, Hacienda Los Algodones has become medical tourists’ favorite hotel in Los Algodones. Our outstanding customer service, charming accommodations and enchanting atmosphere are just some of the reasons why our guests keep coming back.</p>
 					We’re located just seven miles west of Yuma, AZ and 4 blocks away from the border crossing. </p>
@@ -173,99 +172,10 @@
 			<!-- Restaurant -->
 			
 			<!-- Booking Form -->
-			<div class="c-modal c-booking" v-show="visibleContact" @click="show" v-click-outside="hide" v-bind:class="{active: isActive}">  <!-- v-show="visibleContact" @click="hideContact" -->
-			  <div class="c-modal__container c-booking__container" v-on:keyup.esc="hideContact">
-			    <h2 class="c-content-hacienda__title">Rest in beautiful mexico</h2>
-			    <p class="u-mb1">Please fill in the forms below and we’ll get back to you as soon as possible with more information about your stay with Hacienda Los Algodones and your treatment at the dental clinic of your choice. All fields are required.</p>
+			
+			<contact v-if="show" v-on:close-modal="show = false" v-on:show-modal="show = true"></contact>
 
-			    <form @submit.prevent="validateForm('form-1')" data-vv-scope="form-1" class="c-booking__form o-flex o-flex--center" method="post">
-			    	<div class="o-flex u-flex__full o-flex--justify">
-
-			    		<div class="u-flex__31">
-			    			<span>Your name </span>
-			    			<p class="u-mb0"><small class="is-error">{{ errors.first('form-1.full_name') }}</small></p>
-			    			<input type="text" class="c-form-input c-booking__form-input" v-model="contactData.full_name" name="full_name" v-validate="'required|alpha'">
-			    		</div>
-
-			    		<div class="u-flex__31">
-			    			<span>Email </span>
-			    			<p class="u-mb0"><small class="is-error">{{ errors.first('form-1.email') }}</small></p>
-			    			<input type="email" class="c-form-input c-booking__form-input" v-model="contactData.email" name="email" v-validate="'required|email'">
-			    		</div>
-
-			    		<div class="u-flex__31">
-			    			<span>Contact Number </span>
-			    			<p class="u-mb0"><small class="is-error">{{ errors.first('form-1.phone') }}</small></p>
-			    			<input type="tel" class="c-form-input c-booking__form-input" v-model="contactData.phone" name="phone" maxlength="10" v-validate="'required|numeric'">
-			    		</div>
-			    	</div>
-
-			    	<div class="o-flex u-flex__full o-flex--justify o-flex--middle">
-
-			    		<div class="u-flex__22">
-			    			<span>Arrival Date </span>
-			    			<p class="u-mb0"><small class="is-error">{{ errors.first('form-1.date_arrival') }}</small></p>
-			    			<datepicker v-validate="'date_format:DD/MM/YYYY'" name="date_arrival" v-model="contactData.date_arrival" class="c-form-input c-booking__form-input"></datepicker>
-			    		</div>
-
-			    		<div class="u-flex__22">
-			    			<span>Departure Date </span>
-			    			<p class="u-mb0"><small class="is-error">{{ errors.first('form-1.date_departure') }}</small></p>
-			    			<datepicker v-validate="'date_format:DD/MM/YYYY'" v-model="contactData.date_departure" name="date_departure" class="c-form-input c-booking__form-input"></datepicker>
-			    		</div>
-
-			    		<div class="u-flex__22">
-			    			<span>Party </span>
-			    			<p class="u-mb0"><small class="is-error">{{ errors.first('form-1.party') }}</small></p>
-							  <select class="c-form-input c-booking__form-input" v-validate="'included:1,2,3,4'" v-model="contactData.party" name="party" data-vv-as="selected">
-							    <option value="0"></option>
-							    <option value="1">1</option>
-							    <option value="2">2</option>
-							    <option value="3">3</option>
-							    <option value="4">4</option>
-							  </select>
-			    		</div>
-
-			    		<div class="u-flex__22">
-			    			<span>Room </span>
-			    			<p class="u-mb0"><small class="is-error">{{ errors.first('form-1.room') }}</small></p>
-			    			<select class="c-form-input c-booking__form-input" v-model="contactData.room" name="room" v-validate="'included:Single,Double,Suite'" data-vv-as="selected">
-							    <option value="0"></option>
-							    <option value="Single">Single</option>
-							    <option value="Double">Double</option>
-							    <option value="Suite">Suite</option>
-							  </select>
-			    		</div>
-			    	</div>
-
-			    	<!-- <div class="o-flex u-flex__full u-mb2 u-my2">
-			    		<span><b>Want to add another guest? </b><a href="">Click here</a></span>
-			    	</div> -->
-
-			    	<!-- <div class="o-flex u-flex__full o-flex--justify u-mb1">
-			    		<div class="u-flex__full">
-			    			<input type="text" class="c-form-input" placeholder="Guest Name" name="guest_1">
-			    		</div>
-			    		<div class="u-flex__full">
-			    			<input type="text" class="c-form-input" placeholder="Guest Name" name="guest_2">
-			    		</div>
-			    		<div class="u-flex__full">
-			    			<input type="text" class="c-form-input" placeholder="Guest Name" name="guest_3">
-			    		</div>
-			    	</div> -->
-
-			    	<div class="u-flex__third">
-							<button class="c-button-general c-button-general__cta" type="submit">Submit</button>
-			    	</div>
-
-			    	<input type="hidden" name="redirect" value="https://haciendalosalgodones.com">
-
-					</form>
-			    <button type="sumbit" class="c-modal__close c-booking__container-close" aria-label="close">
-			      <span @click="hide" v-on:click="hideContact" aria-hidden="true">&times;</span> <!-- v-on:click="hideContact" -->
-			    </button>
-			  </div>
-			</div>
+			
 			<!-- Booking Form -->
 
 			<!-- Location -->
@@ -343,7 +253,7 @@
 					</div>
 					<div class="c-footer__info">
 						<small><span>BOOK YOUR ROOM</span><br></small>
-						<a class="c-footer__book" @click.stop="show"><b>MAKE YOUR RESERVATION<br></b>CLICK HERE</a>
+						<a class="c-footer__book" v-on:click="showContact"><b>MAKE YOUR RESERVATION<br></b>CLICK HERE</a>
 					</div>
 				</div>
 			</div>
@@ -362,4 +272,89 @@
 	</div><!-- END APP VUE -->
 	<script src="./dist/bundle.js"></script>
 </body>
+
+<!-- Booking Form -->
+<template id="contact">
+<div class="c-modal c-booking" @keyup.enter="$emit('close-modal')" v-on:click.left="$emit('close-modal')">
+  <div class="c-modal__container c-booking__container" v-on:click.stop="$emit('show-modal')">
+    <h2 class="c-content-hacienda__title">Rest in beautiful mexico</h2>
+    <p class="u-mb1">Please fill in the forms below and we’ll get back to you as soon as possible with more information about your stay with Hacienda Los Algodones and your treatment at the dental clinic of your choice. All fields are required.</p>
+
+    <form @submit.prevent="validateForm('form-1')" data-vv-scope="form-1" class="c-booking__form o-flex o-flex--center" method="post">
+    	<div class="o-flex u-flex__full o-flex--justify">
+
+    		<div class="u-flex__31">
+    			<span>Your name </span>
+    			<p class="u-mb0"><small class="is-error">{{ errors.first('form-1.full_name') }}</small></p>
+    			<input type="text" class="c-form-input c-booking__form-input" v-model="contactData.full_name" name="full_name" v-validate="'required|alpha'">
+    		</div>
+
+    		<div class="u-flex__31">
+    			<span>Email </span>
+    			<p class="u-mb0"><small class="is-error">{{ errors.first('form-1.email') }}</small></p>
+    			<input type="email" class="c-form-input c-booking__form-input" v-model="contactData.email" name="email" v-validate="'required|email'">
+    		</div>
+
+    		<div class="u-flex__31">
+    			<span>Contact Number </span>
+    			<p class="u-mb0"><small class="is-error">{{ errors.first('form-1.phone') }}</small></p>
+    			<input type="tel" class="c-form-input c-booking__form-input" v-model="contactData.phone" name="phone" maxlength="10" v-validate="'required|numeric'">
+    		</div>
+    	</div>
+
+    	<div class="o-flex u-flex__full o-flex--justify o-flex--middle">
+
+    		<div class="u-flex__22">
+    			<span>Arrival Date </span>
+    			<p class="u-mb0"><small class="is-error">{{ errors.first('form-1.date_arrival') }}</small></p>
+    			<datepicker v-validate="'date_format:DD/MM/YYYY'" name="date_arrival" v-model="contactData.date_arrival" class="c-form-input c-booking__form-input"></datepicker>
+    		</div>
+
+    		<div class="u-flex__22">
+    			<span>Departure Date </span>
+    			<p class="u-mb0"><small class="is-error">{{ errors.first('form-1.date_departure') }}</small></p>
+    			<datepicker v-validate="'date_format:DD/MM/YYYY'" v-model="contactData.date_departure" name="date_departure" class="c-form-input c-booking__form-input"></datepicker>
+    		</div>
+
+    		<div class="u-flex__22">
+    			<span>Party </span>
+    			<p class="u-mb0"><small class="is-error">{{ errors.first('form-1.party') }}</small></p>
+				  <select class="c-form-input c-booking__form-input" v-validate="'included:1,2,3,4'" v-model="contactData.party" name="party" data-vv-as="selected">
+				    <option value="0"></option>
+				    <option value="1">1</option>
+				    <option value="2">2</option>
+				    <option value="3">3</option>
+				    <option value="4">4</option>
+				  </select>
+    		</div>
+
+    		<div class="u-flex__22">
+    			<span>Room </span>
+    			<p class="u-mb0"><small class="is-error">{{ errors.first('form-1.room') }}</small></p>
+    			<select class="c-form-input c-booking__form-input" v-model="contactData.room" name="room" v-validate="'included:Single,Double,Suite'" data-vv-as="selected">
+				    <option value="0"></option>
+				    <option value="Single">Single</option>
+				    <option value="Double">Double</option>
+				    <option value="Suite">Suite</option>
+				  </select>
+    		</div>
+    	</div>
+
+
+    	<div class="u-flex__third">
+				<button class="c-button-general c-button-general__cta" type="submit">Submit</button>
+    	</div>
+
+    	<input type="hidden" name="redirect" value="https://haciendalosalgodones.com">
+
+		</form>
+    <button type="sumbit" class="c-modal__close c-booking__container-close" aria-label="close">
+      <span v-on:click.stop="$emit('close-modal')" aria-hidden="true">&times;</span>
+    </button>
+  </div>
+</div>
+</template>
+<!-- Booking Form -->
+
+
 </html>
