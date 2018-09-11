@@ -29,15 +29,16 @@ new Vue({
 
     isActive: false,
 
-    // contactData: {
-    //   full_name: '',
-    //   email: '',
-    //   phone: '',
-    //   date_arrival: '',
-    //   date_departure: '',
-    //   party: '0',
-    //   room: '0'
-    // },
+    saniData: {
+      full_name: '',
+      email: '',
+      phone: '',
+      date_desired: '-',
+      gender: '0',
+      treatment: '0',
+      date_time: '0',
+      message: '',
+    },
 	},
   mounted() {
     document.addEventListener('keydown', (e) => {
@@ -64,6 +65,20 @@ new Vue({
 
     showMenu() {
       this.visibleMenu = !this.visibleMenu;
+    },
+
+    validateSani(scope) {
+
+      let uri = 'http://api.forms.sanimedical.info/v1/send/sani_6WkpdGdN4NInvJRxr2aqcr5H';
+
+      this.$validator.validateAll(scope).then((result) => {
+        if (result) {
+          // eslint-disable-next-line
+          axios.post(uri, this.saniData)
+          alert('Thank You!');
+        }
+        return;
+      });
     },
 
   },
@@ -158,8 +173,8 @@ Vue.component('contact', {
         full_name: '',
         email: '',
         phone: '',
-        date_arrival: '',
-        date_departure: '',
+        date_arrival: '-',
+        date_departure: '-',
         party: '0',
         room: '0'
       },

@@ -97,27 +97,32 @@
         			</div>
         		</div>
         		<div class="u-flex__full">
-	        		<form action="http://api.forms.sanimedical.info/v1/send/sani_6WkpdGdN4NInvJRxr2aqcr5H" method="post">
+	        		<form @submit.prevent="validateSani('form-2')" data-vv-scope="form-2" method="post">
 
-	        			<small class="is-error">{{ errors.first('full_name') }}</small>
-	        			<input type="text" class="c-form-input" name="full_name" v-validate="'required|alpha'" placeholder="Full Name">
+	        			<span style="color: #05529d;">Your name </span>
+			    			<p class="u-mb0"><small class="is-error">{{ errors.first('form-2.full_name') }}</small></p>
+			    			<input type="text" class="c-form-input" v-model="saniData.full_name" name="full_name" v-validate="'required|alpha'">
 
-	        			<small class="is-error">{{ errors.first('email') }}</small>
-			    			<input type="email" class="c-form-input" name="email" v-validate="'required|email'" placeholder="Email">
+	        			<span style="color: #05529d;">Email </span>
+	        			<p class="u-mb0"><small class="is-error">{{ errors.first('form-2.email') }}</small></p>
+			    			<input type="email" class="c-form-input" v-model="saniData.email" name="email" v-validate="'required|email'">
 
-	        			<small class="is-error">{{ errors.first('gender') }}</small>
-	        			<select class="c-form-input" v-validate="'included:Female,Male'" name="gender" data-vv-as="selected">
-							    <option>Gender</option>
+	        			<span style="color: #05529d;">Gender </span>
+	        			<p class="u-mb0"><small class="is-error">{{ errors.first('form-2.gender') }}</small></p>
+	        			<select class="c-form-input" v-validate="'included:Female,Male'" name="gender" data-vv-as="selected" v-model="saniData.gender">
+							    <option value="0"></option>
 							    <option value="Female">Female</option>
 							    <option value="Male">Male</option>
 							  </select>
 
-							  <small class="is-error">{{ errors.first('phone') }}</small>
-			    			<input type="tel" class="c-form-input" name="phone" maxlength="10" v-validate="'required|numeric'" placeholder="Contact Number">
+							  <span style="color: #05529d;">Contact Number </span>
+	        			<p class="u-mb0"><small class="is-error">{{ errors.first('form-2.phone') }}</small></p>
+			    			<input type="tel" class="c-form-input" name="phone" maxlength="10" v-validate="'required|numeric'" v-model="saniData.phone">
 
-	        			<small class="is-error">{{ errors.first('treatment') }}</small>
-	        			<select class="c-form-input" name="treatment" v-validate="'included:Dental Implants,Dentures,Dental Crowns,Full Mouth Restoration,Bone Graft/Sinus Lift,Cosmetics,Dental Laser,Dental Veneers'" data-vv-as="selected">
-	        				<option>Treatment Required</option>
+	        			<span style="color: #05529d;">Treatments Desired </span>
+	        			<p class="u-mb0"><small class="is-error">{{ errors.first('form-2.treatment') }}</small></p>
+	        			<select class="c-form-input" name="treatment" v-validate="'included:Dental Implants,Dentures,Dental Crowns,Full Mouth Restoration,Bone Graft/Sinus Lift,Cosmetics,Dental Laser,Dental Veneers'" v-model="saniData.treatment" data-vv-as="selected">
+	        				<option value="0"></option>
 	        				<option value="Dental Implants">Dental Implants</option>
 	        				<option value="Dentures">Dentures</option>
 	        				<option value="Dental Crowns">Dental Crowns</option>
@@ -128,19 +133,22 @@
 	        				<option value="Dental Veneers">Dental Veneers</option>
 	        			</select>
 
-	        			<small class="is-error">{{ errors.first('date_desired') }}</small>
-			    			<input v-validate="'date_format:DD/MM/YYYY'" name="date_desired" type="date" class="c-form-input today">
+	        			<span style="color: #05529d;">Desired Date </span>
+    						<p class="u-mb0"><small class="is-error">{{ errors.first('form-2.date_desired') }}</small></p>
+			    			<datepicker v-validate="'date_format:DD/MM/YYYY'" name="date_desired" v-model="saniData.date_desired" class="c-form-input"></datepicker>
 
-	        			<small class="is-error">{{ errors.first('date_time') }}</small>
-	        			<select class="c-form-input" name="date_time" v-validate="'included:Morning,Mid-Day,Afternoon'" data-vv-as="selected">
-							    <option>Desired Time</option>
+	        			<span style="color: #05529d;">Desired Time</span>
+	        			<p class="u-mb0"><small class="is-error">{{ errors.first('form-2.date_time') }}</small></p>
+	        			<select class="c-form-input" name="date_time" v-validate="'included:Morning,Mid-Day,Afternoon'" data-vv-as="selected" v-model="saniData.date_time">
+							    <option value="0"></option>
 							    <option value="Morning">Morning</option>
 							    <option value="Mid-Day">Mid-day</option>
 							    <option value="Afternoon">Afternoon</option>
 							  </select>
 
-							  <small class="is-error">{{ errors.first('message') }}</small>
-	        			<textarea class="c-form-input" rows="5" placeholder="Your message" name="message" v-validate="'required'" type="text"></textarea>
+							  <span style="color: #05529d;">Your Message</span>
+	        			<p class="u-mb0"><small class="is-error">{{ errors.first('form-2.message') }}</small></p>
+	        			<textarea class="c-form-input" rows="5" name="message" v-validate="'required'" type="text" v-model="saniData.message"></textarea>
 
 	        			<div class="o-flex o-flex--center">
 	        				<div class="u-flex__half u-my1">
@@ -148,7 +156,6 @@
 						    	</div>
 	        			</div>
 
-	        			<input type="hidden" name="redirect" value="https://haciendalosalgodones.com">
 	        		</form>
 	        	</div>
         	</div>
