@@ -15,10 +15,10 @@
 			<div class="c-header__logo">
 				<a href="/"><img src="/dist/img/logo-header.png" alt=""></a>
 			</div>
-			<div class="c-header__menu-small" @click="showMenu">
-				<a href="">MENU</a>
+			<div class="c-header__menu-small">
+				<a  @click="burger = !burger">MENU</a>
 			</div>
-			<div class="c-header__nav">  <!-- v-show="visibleMenu" -->
+			<div class="c-header__nav" v-if="burger">  <!-- v-show="visibleMenu" -->
 				<div class="c-header__links">
 					<ul class="o-flex u-mxa">
 						<li><a href="/rooms/">Rooms & Services</a></li>

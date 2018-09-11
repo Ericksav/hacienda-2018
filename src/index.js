@@ -21,9 +21,7 @@ new Vue({
 
     show: false,
     modal: false,
-
-    visiblePolicy: false,
-    visibleMenu: false,
+    burger: true,
 
 
     saniData: {
@@ -45,17 +43,6 @@ new Vue({
     });
   },
   methods: {
-
-    showPolicy() {
-      this.visiblePolicy = !this.visiblePolicy;
-    },
-    hidePolicy() {
-      this.visiblePolicy = !this.visiblePolicy;
-    },
-
-    showMenu() {
-      this.visibleMenu = !this.visibleMenu;
-    },
 
     validateSani(scope) {
 
@@ -190,8 +177,3 @@ Vue.component('contact', {
     },
   }
 });
-
-// Vue.component('form-contact', {
-//   template: "<h1>You clicked me times.</h1>"
-// });
-
