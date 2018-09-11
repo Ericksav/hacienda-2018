@@ -20,14 +20,11 @@ new Vue({
   data: {
 
     show: false,
+    modal: false,
 
-		visibleContact: false,
     visiblePolicy: false,
     visibleMenu: false,
 
-    showInside: false,
-
-    isActive: false,
 
     saniData: {
       full_name: '',
@@ -48,13 +45,6 @@ new Vue({
     });
   },
   methods: {
-
-		showContact() {
-			this.visibleContact = !this.visibleContact;
-		},
-		hideContact() {
-			this.visibleContact = !this.visibleContact;
-		},
 
     showPolicy() {
       this.visiblePolicy = !this.visiblePolicy;
@@ -88,7 +78,7 @@ new Vue({
 });
 
 Vue.component('contact', {
- template: `<div class="c-modal c-booking" @keyup.enter="$emit('close-modal')" v-on:click.left="$emit('close-modal')">
+ template: `<div class="c-modal c-booking" v-on:click.left="$emit('close-modal')">
   <div class="c-modal__container c-booking__container" v-on:click.stop="$emit('show-modal')">
     <h2 class="c-content-hacienda__title">Rest in beautiful mexico</h2>
     <p class="u-mb1">Please fill in the forms below and we’ll get back to you as soon as possible with more information about your stay with Hacienda Los Algodones and your treatment at the dental clinic of your choice. All fields are required.</p>

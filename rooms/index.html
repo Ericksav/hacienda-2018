@@ -125,7 +125,7 @@
         			<li>Hacienda Los Algodones and its staff are not responsible for any accidents or injuries your pet may suffer or cause to other hotel guests and/or staff.</li>
         			<li>Hacienda Los Algodones reserves the right to refuse entry to any pet if no proof of vaccination is shown, if the pet shows signs of a contagious disease, demonstrates aggressive behavior, or does not comply with hotel policies.</li>
         		</ul>
-        		<a @click="showPolicy" class="c-button-general__brown">Our pet policy</a>
+        		<a @click="modal = true" class="c-button-general__brown">Our pet policy</a>
         	</div>
         </div>
 			</div>
@@ -137,8 +137,8 @@
 	<!-- Booking Form -->
 	
 	<!-- Pet Policy -->
-	<div class="c-modal c-policy" v-show="visiblePolicy" v-on:keyup.esc="hidePolicy">
-	  <div class="c-modal__container c-policy__container">
+	<div class="c-modal c-policy" v-if="modal" v-on:close-modal="modal = false" v-on:show-modal="modal = true" v-on:click.left="modal = false">
+	  <div class="c-modal__container c-policy__container" v-on:click.stop="modal = true">
 	  	<div class=" o-flex">
 	  		<h2 class="c-content-hacienda__title u-flex__full">pet friendly hotels</h2>
   			<div class="u-flex__full">
@@ -170,7 +170,7 @@
   			</div>
 	  	</div>
 	  	<button type="button" class="c-modal__close c-booking__container-close" aria-label="close">
-	      <span @click="hidePolicy" aria-hidden="true">&times;</span>
+	      <span v-on:click.stop="modal = false" aria-hidden="true">&times;</span>
 	    </button>
 	  </div>
 	</div>
