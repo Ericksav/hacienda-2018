@@ -8,6 +8,7 @@
 	<link rel="canonical" href="https://haciendalosalgodones.com/gallery"/>
 </head>
 <body>
+	<div id="app">
 	<header>
 		<div class="c-border u-hide__small"></div>
 		<div class="o-flex o-flex--middle c-header">
@@ -30,7 +31,7 @@
 			</div>
 			<div class="c-header__cta">
 				<span>REST IN BEAUTIFUL MEXICO</span>
-				<button class="c-button-general c-button-general__cta">Book a Room</button>
+				<button  @click="show = true" class="c-button-general c-button-general__cta">Book a Room</button>
 			</div>
 		</div>
 		<!-- Border -->
@@ -55,6 +56,13 @@
 	<div class="o-container--full">
 		<div class="o-container o-flex c-content-hacienda u-mb2">
 			<div class="u-flex__full o-flex">
+
+				<!-- Booking Form -->
+			
+				<contact v-if="show" v-on:close-modal="show = false" v-on:show-modal="show = true"></contact>
+			
+				<!-- Booking Form -->
+
 				<div class="u-flex__full c-gallery__container">
 					<h2 class="c-content-hacienda__title c-gallery__title">Rest in beautiful mexico</h2>
 				</div>
@@ -172,7 +180,7 @@
 					</div>
 					<div class="c-footer__info">
 						<small><span>BOOK YOUR ROOM</span><br></small>
-						<a class="c-footer__book" href="#"><b>MAKE YOUR RESERVATION<br></b>CLICK HERE</a>
+						<a class="c-footer__book" @click="show = true"><b>MAKE YOUR RESERVATION<br></b>CLICK HERE</a>
 					</div>
 				</div>
 			</div>
@@ -188,6 +196,7 @@
 		</div>
 	</footer>
 	<!-- Footer -->
+	</div><!-- END APP VUE -->
 	<script src="../dist/bundle.js"></script>
 </body>
 </html>

@@ -8,6 +8,7 @@
 	<link rel="canonical" href="https://haciendalosalgodones.com/restaurant" />
 </head>
 <body>
+	<div id="app">
 	<header>
 		<div class="c-border u-hide__small"></div>
 		<div class="o-flex o-flex--middle c-header">
@@ -30,7 +31,7 @@
 			</div>
 			<div class="c-header__cta">
 				<span>REST IN BEAUTIFUL MEXICO</span>
-				<button class="c-button-general c-button-general__cta">Book a Room</button>
+				<button  @click="show = true" class="c-button-general c-button-general__cta">Book a Room</button>
 			</div>
 		</div>
 		<!-- Border -->
@@ -117,6 +118,12 @@
 	</div>
 	<!-- Content -->
 
+	<!-- Booking Form -->
+			
+	<contact v-if="show" v-on:close-modal="show = false" v-on:show-modal="show = true"></contact>
+		
+	<!-- Booking Form -->
+
 	<!-- Footer -->
 	<footer>
 		<div class="c-border"></div>
@@ -154,7 +161,7 @@
 					</div>
 					<div class="c-footer__info">
 						<small><span>BOOK YOUR ROOM</span><br></small>
-						<a class="c-footer__book" href="#"><b>MAKE YOUR RESERVATION<br></b>CLICK HERE</a>
+						<a class="c-footer__book" @click="show = true"><b>MAKE YOUR RESERVATION<br></b>CLICK HERE</a>
 					</div>
 				</div>
 			</div>
@@ -170,6 +177,7 @@
 		</div>
 	</footer>
 	<!-- Footer -->
+	</div><!-- END APP VUE -->
 	<script src="../dist/bundle.js"></script>
 </body>
 </html>

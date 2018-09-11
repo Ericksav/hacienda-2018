@@ -31,7 +31,7 @@
 			</div>
 			<div class="c-header__cta">
 				<span>REST IN BEAUTIFUL MEXICO</span>
-				<button v-on:click="showContact" class="c-button-general c-button-general__cta">Book a Room</button>
+				<button  @click="show = true" class="c-button-general c-button-general__cta">Book a Room</button>
 			</div>
 		</div>
 		<!-- Border -->
@@ -80,6 +80,11 @@
         		<p>To take advantage of these promotions please fill out the information below and a dental advisor will contact you shortly.</p>
         		<p>For further information about this promotion you may contact the participant clinics. Any comment, review, or suggestion about this promotion may be addressed to participant dental clinics.</p>
         	</div>
+        	<!-- Booking Form -->
+			
+					<contact v-if="show" v-on:close-modal="show = false" v-on:show-modal="show = true"></contact>
+				
+					<!-- Booking Form -->
         </div>
         <div class="c-promotions__sidebar">
         	<div class="c-promotions__sidebar__container">
@@ -197,7 +202,7 @@
 					</div>
 					<div class="c-footer__info">
 						<small><span>BOOK YOUR ROOM</span><br></small>
-						<a class="c-footer__book" href="#"><b>MAKE YOUR RESERVATION<br></b>CLICK HERE</a>
+						<a class="c-footer__book" @click="show = true"><b>MAKE YOUR RESERVATION<br></b>CLICK HERE</a>
 					</div>
 				</div>
 			</div>
