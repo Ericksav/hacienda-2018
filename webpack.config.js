@@ -79,7 +79,6 @@ module.exports = {
           "./templates/*.html",
           "./src/scss/**/*.scss",
           "./*.vue"
-          "./src/components/*.vue"
         ]
     }),
     new VueLoaderPlugin(),

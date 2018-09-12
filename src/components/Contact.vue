@@ -102,20 +102,21 @@ export default {
     methods: {
         validateForm(scope) {
 
-      let uri = 'http://api.forms.sanimedical.info/v1/send/sani_gk8N1fgUR1Xx3ckGeIy5M0pn';
+          let uri = 'http://api.forms.sanimedical.info/v1/send/sani_gk8N1fgUR1Xx3ckGeIy5M0pn';
 
-      this.$validator.validateAll(scope).then((result) => {
-        if (result) {
-          axios.post(uri, this.contactData)
-            .then(res => {
-                // Redirect
-                this.show = false;
-            })
-            .catch(e => console.error(e))
-        }
-        return;
-      });
-    },
+          this.$validator.validateAll(scope).then((result) => {
+            if (result) {
+              axios.post(uri, this.contactData)
+                .then(res => {
+                    // Redirect
+                    window.location.replace('haciendalosalgodones.com/thanks');
+                    this.show = false;
+                })
+                .catch(e => console.error(e))
+            }
+            return;
+          });
+        },
     }
 }
 </script>
