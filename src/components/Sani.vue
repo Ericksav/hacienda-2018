@@ -91,7 +91,7 @@ export default {
               axios.post(uri, this.saniData)
                 .then(res => {
                     // Redirect
-                    window.location.replace('haciendalosalgodones.com/thanks');
+                    window.location.replace('/thanks');
                 })
                 .catch(e => console.error(e))
             }

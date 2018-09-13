@@ -109,7 +109,7 @@ export default {
               axios.post(uri, this.contactData)
                 .then(res => {
                     // Redirect
-                    window.location.replace('haciendalosalgodones.com/thanks');
+                    window.location.replace('/thanks');
                     this.show = false;
                 })
                 .catch(e => console.error(e))
