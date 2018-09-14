@@ -34,9 +34,9 @@
 			<option value="Dental Veneers">Dental Veneers</option>
 		</select>
 
-		<span style="color: #05529d;">Desired Date </span>
+		<span style="color: #05529d;">Desired Date </span> <span>{{ saniData.date_desired }}</span>
 		<p class="u-mb0"><small class="is-error">{{ errors.first('form-2.date_desired') }}</small></p>
-		<datepicker v-validate="'required|date_format:DD/MM/YYYY'" name="date_desired" v-model="saniData.date_desired" class="c-form-input"></datepicker>
+		<datepicker :value="state.date" :disabled="state.disabled" :format="customFormatter" v-validate="'required|date_format:DD/MM/YYYY'" name="date_desired" v-model="saniData.date_desired" class="c-form-input"></datepicker>
 
 		<span style="color: #05529d;">Desired Time</span>
 		<p class="u-mb0"><small class="is-error">{{ errors.first('form-2.date_time') }}</small></p>
@@ -51,6 +51,7 @@
 		<p class="u-mb0"><small class="is-error">{{ errors.first('form-2.message') }}</small></p>
 		<textarea class="c-form-input" rows="5" name="message" v-validate="'required'" type="text" v-model="saniData.message"></textarea>
 
+
 		<div class="o-flex o-flex--center">
 			<div class="u-flex__half u-my1">
 				<button class="u-px0 c-button-general c-button-general__purple" type="submit">Submit</button>
@@ -61,7 +62,17 @@
 
 <script>
 import Datepicker from 'vuejs-datepicker';
+import moment from 'moment';
 
+
+var state = {
+		
+		date: new Date(2018, 9,  13),
+
+    disabled: {
+        from: new Date(2018, 9, 13), // Disable all dates after specific date
+    }
+}
 
 export default {
     components: {
@@ -69,16 +80,17 @@ export default {
     },
     data() {
         return {
+        	state: '',
             saniData: {
-			      full_name: '',
-			      email: '',
-			      phone: '',
-			      date_desired: '',
-			      gender: '',
-			      treatment: '',
-			      date_time: '',
-			      message: '',
-			    },
+				      full_name: '',
+				      email: '',
+				      phone: '',
+				      date_desired: '',
+				      gender: '',
+				      treatment: '',
+				      date_time: '',
+				      message: '',
+				    }
         }
     },
     methods: {
@@ -98,6 +110,9 @@ export default {
             return;
           });
         },
+        customFormatter(date) {
+		      return moment(date).format('Do MMMM YYYY');
+		    }
     }
 }
 </script>
